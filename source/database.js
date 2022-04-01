@@ -1,5 +1,5 @@
 const DATABASE = {
-    "fuseOptions": {
+    fuseOptions: {
         isCaseSensitive: false,     // false
 
         includeScore: true,         // true
