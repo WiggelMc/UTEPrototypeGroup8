@@ -24,131 +24,131 @@ const DATABASE = {
             }
         ]
     },
-    "books": [
+    books: [
         {
-            "name": "Design Book",
-            "tags": [
+            name: "Design Book",
+            tags: [
                 "cool",
                 "swag",
             ],
-            "physicalStatus": {
-                "available": true,
-                "onLoanUntil": 9 / 17 / 2016,
+            physicalStatus: {
+                available: true,
+                onLoanUntil: 9 / 17 / 2016,
             },
-            "digitalStatus": {
-                "available": true
+            digitalStatus: {
+                available: true
             },
         },
         {
-            "name": "Architect Book",
-            "tags": [
+            name: "Architect Book",
+            tags: [
                 "good",
                 "swag",
             ],
-            "physicalStatus": {
-                "available": false,
-                "onLoanUntil": 9 / 8 / 2016,
+            physicalStatus: {
+                available: false,
+                onLoanUntil: 9 / 8 / 2016,
             },
-            "digitalStatus": {
-                "available": false
+            digitalStatus: {
+                available: false
             },
         },
         {
-            "name": "Trueness of Things",
-            "tags": [
+            name: "Trueness of Things",
+            tags: [
                 "good",
                 "swag",
             ],
-            "physicalStatus": {
-                "available": false,
-                "onLoanUntil": 9 / 8 / 2016,
+            physicalStatus: {
+                available: false,
+                onLoanUntil: 9 / 8 / 2016,
             },
-            "digitalStatus": {
-                "available": false
+            digitalStatus: {
+                available: false
             },
         },
         {
-            "name": "Life is normal",
-            "tags": [
+            name: "Life is normal",
+            tags: [
                 "cool",
                 "swag",
             ],
-            "physicalStatus": {
-                "available": false,
-                "onLoanUntil": 9 / 8 / 2016,
+            physicalStatus: {
+                available: false,
+                onLoanUntil: 9 / 8 / 2016,
             },
-            "digitalStatus": {
-                "available": false
+            digitalStatus: {
+                available: false
             },
         },
         {
-            "name": "Test 15",
-            "tags": [
+            name: "Test 15",
+            tags: [
                 "good",
                 "cool",
             ],
-            "physicalStatus": {
-                "available": false,
-                "onLoanUntil": 9 / 8 / 2016,
+            physicalStatus: {
+                available: false,
+                onLoanUntil: 9 / 8 / 2016,
             },
-            "digitalStatus": {
-                "available": false
+            digitalStatus: {
+                available: false
             },
         },
         {
-            "name": "Wall",
-            "tags": [
+            name: "Wall",
+            tags: [
                 "good",
                 "swag",
             ],
-            "physicalStatus": {
-                "available": false,
-                "onLoanUntil": 9 / 8 / 2016,
+            physicalStatus: {
+                available: false,
+                onLoanUntil: 9 / 8 / 2016,
             },
-            "digitalStatus": {
-                "available": false
+            digitalStatus: {
+                available: false
             },
         },
         {
-            "name": "Best Life",
-            "tags": [
+            name: "Best Life",
+            tags: [
                 "good",
                 "swag",
             ],
-            "physicalStatus": {
-                "available": false,
-                "onLoanUntil": 9 / 8 / 2016,
+            physicalStatus: {
+                available: false,
+                onLoanUntil: 9 / 8 / 2016,
             },
-            "digitalStatus": {
-                "available": false
+            digitalStatus: {
+                available: false
             },
         },
         {
-            "name": "Life Tips from Frank",
-            "tags": [
+            name: "Life Tips from Frank",
+            tags: [
                 "good",
                 "swag",
             ],
-            "physicalStatus": {
-                "available": false,
-                "onLoanUntil": 9 / 8 / 2016,
+            physicalStatus: {
+                available: false,
+                onLoanUntil: 9 / 8 / 2016,
             },
-            "digitalStatus": {
-                "available": false
+            digitalStatus: {
+                available: false
             },
         },
         {
-            "name": "The Harmony of Laden",
-            "tags": [
+            name: "The Harmony of Laden",
+            tags: [
                 "good",
                 "Life",
             ],
-            "physicalStatus": {
-                "available": false,
-                "onLoanUntil": 9 / 8 / 2016,
+            physicalStatus: {
+                available: false,
+                onLoanUntil: 9 / 8 / 2016,
             },
-            "digitalStatus": {
-                "available": false
+            digitalStatus: {
+                available: false
             },
         },
     ]
