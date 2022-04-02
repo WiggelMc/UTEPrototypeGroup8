@@ -41,9 +41,21 @@ function displayMatch(match) {
     let text = document.createElement("p");
 
     let link = document.createElement("a");
-    link.innerText = book.name;
-    link.href = pathBookview+book.name;
+    link.innerText = book.title;
+    link.href = pathBookview+book.id;
 
     text.appendChild(link);
     divResults.appendChild(text);
+
+
+    /*
+    const newElem = Object.assign(
+        document.createElement(`div`), { id: `divid`, className: `test`, innerHTML: `
+            <p>hello-%Test%-%Test1%</p>
+        `
+                .replaceAll("%Test%","Injected Term")
+                .replaceAll("%Test1%","Walfisch")
+        });
+    divResults.appendChild(newElem);
+    */
 }
