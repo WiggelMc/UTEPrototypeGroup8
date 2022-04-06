@@ -18,10 +18,10 @@ function displayBook(book) {
             <p>Notes:</p> <p>%notes%</p> <br>
         `
                 .replaceAll("%title%",book.title)
-                .replaceAll("%authors%", book.authors.join("<br>"))
-                .replaceAll("%tags%",book.tags.join("<br>"))
-                .replaceAll("%abstract%",book.abstract.join("<br>"))
-                .replaceAll("%notes%",book.notes.join("<br>"))
+                .replaceAll("%authors%", book.authors?.join("<br>"))
+                .replaceAll("%tags%",book.tags?.join("<br>"))
+                .replaceAll("%abstract%",book.abstract?.join("<br>"))
+                .replaceAll("%notes%",book.notes?.join("<br>"))
         });
     document.body.appendChild(newElem);
 }
