@@ -1,23 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Search</title>
     <!--<script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/fuse.js@6.5.3"></script>-->
     <script defer type="text/javascript" src="../lib/fuse.js"></script>
     <script defer type="text/javascript" src="../database.js"></script>
     <script defer type="text/javascript" src="search.js"></script>
-</head>
-<body>
-    <a href="../../index.html">HOME</a>
-    <form action="search.html">
-        <label for="search">Search:</label><br>
-        <input type="search" id="search" name="search" value=""><br>
-        <input type="submit" value="Submit">
-    </form>
-    <p>Results<br><br><br></p>
-    <div id="results">
-
-    </div>
-</body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .checked {
+        color: #9370db;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success bg-opacity-50">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../../index.html">Home</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-black" href="search.html">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-black" href="">Anschaffungsvorschlag</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-black" href="#">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-black" href="#">Lageplan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-black" href="#">Ordnungen</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="mt-3">
+      <div class="container">
+        <div class="row bg-success p-2 bg-opacity-50">
+          <div class="col-6">
+            <form action="search.html">
+              <label for="search">Search:</label><br />
+              <input type="search" id="search" name="search" value="" /><br />
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
+          <div class="col-3"></div>
+          <div class="col-3"></div>
+        </div>
+      </div>
+    </section>
+    <section class="mt-2">
+      <div class="container p-2">
+        <div class="row">
+          <div class="col-2 text-center bg-success p-2 bg-opacity-25">
+            <h2>Filter</h2>
+            <p class="fw-bold mt-5">Verfügbarkeit</p>
+            <form class="text-start ms-2">
+              <input type="checkbox" />
+              <label for="">E-Book</label><br />
+              <input type="checkbox" />
+              <label for="">Ausleihbar</label><br />
+              <input type="checkbox" />
+              <label for="">Vor Ort lesen</label>
+              <p class="text-center mt-4 fw-bold">Erscheinungsjahr</p>
+              <div class="text-center">
+                <input type="text" class="w-75 mb-1" /><br />
+                <input type="text" class="w-75 mb-5" /><br />
+              </div>
+              <div class="ps-4 mt-3">
+                <input type="submit" value="Übernehmen" class="ms-5" />
+              </div>
+            </form>
+          </div>
+          <div class="col-10 bg-light">
+            <div class="row h-25 my-2 mx-1 bg-success p-2 bg-opacity-50">
+              <div class="col-2">
+                <img src="../../The Art.jpeg" class="img-fluid" alt="..." />
+              </div>
+              <div class="col-2">
+                <p class="text-center fw-bold my-2">The Art of the War</p>
+                <p class="text-center my-5">Sun Tzu</p>
+                <div class="text-center my-5">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+              </div>
+              <div class="col-4">
+                <p class="mt-5">
+                  Beschreibung: Eines der frühsten Bücher zu Strategie
+                </p>
+                <p class="mt-4">Schlagwörter: Krieg, China</p>
+              </div>
+              <div class="col-4 bg-light">
+                <p class="my-3 py-2 ps-3 border border-secondary">
+                  E-Book auf EBooks.com
+                </p>
+                <p class="my-3 py-2 ps-3 border border-secondary">
+                  vor Ort lesbar in ZHB-Flensburg
+                </p>
+              </div>
+            </div>
+            <div class="row my-2 mx-1 bg-success p-2 bg-opacity-50">
+              <div class="col-2">
+                <img src="../../The Art.jpeg" class="img-fluid" alt="..." />
+              </div>
+              <div class="col-2">
+                <p class="card-title text-center fw-bold my-2">
+                  The Art of the War
+                </p>
+                <p class="text-center my-5">Sun Tzu</p>
+                <div class="text-center my-5">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+              </div>
+              <div class="col-4">
+                <p class="mt-5">
+                  Beschreibung: Eines der frühsten Bücher zu Strategie
+                </p>
+                <p class="mt-4">Schlagwörter: Krieg, China</p>
+              </div>
+              <div class="col-4 bg-light">
+                <p class="my-3 py-2 ps-3 border border-secondary">
+                  E-Book auf EBooks.com
+                </p>
+                <p class="my-3 py-2 ps-3 border border-secondary">
+                  vor Ort lesbar in ZHB-Flensburg
+                </p>
+              </div>
+            </div>
+            <div class="row my-2 mx-1 bg-success p-2 bg-opacity-50">
+              <div class="col-2">
+                <img src="../../The Art.jpeg" class="img-fluid" alt="..." />
+              </div>
+              <div class="col-2">
+                <p class="card-title text-center fw-bold my-2">
+                  The Art of the War
+                </p>
+                <p class="text-center my-5">Sun Tzu</p>
+                <div class="text-center my-5">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+              </div>
+              <div class="col-4">
+                <p class="mt-5">
+                  Beschreibung: Eines der frühsten Bücher zu Strategie
+                </p>
+                <p class="mt-4">Schlagwörter: Krieg, China</p>
+              </div>
+              <div class="col-4 bg-light">
+                <p class="my-3 py-2 ps-3 border border-secondary">
+                  E-Book auf EBooks.com
+                </p>
+                <p class="my-3 py-2 ps-3 border border-secondary">
+                  vor Ort lesbar in ZHB-Flensburg
+                </p>
+              </div>
+            </div>
+            <div class="row my-2 mx-1 bg-success p-2 bg-opacity-50">
+              <div class="col-2">
+                <img src="../../The Art.jpeg" class="img-fluid" alt="..." />
+              </div>
+              <div class="col-2">
+                <p class="card-title text-center fw-bold my-2">
+                  The Art of the War
+                </p>
+                <p class="text-center my-5">Sun Tzu</p>
+                <div class="text-center my-5">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+              </div>
+              <div class="col-4">
+                <p class="mt-5">
+                  Beschreibung: Eines der frühsten Bücher zu Strategie
+                </p>
+                <p class="mt-4">Schlagwörter: Krieg, China</p>
+              </div>
+              <div class="col-4 bg-light">
+                <p class="my-3 py-2 ps-3 border border-secondary">
+                  E-Book auf EBooks.com
+                </p>
+                <p class="my-3 py-2 ps-3 border border-secondary">
+                  vor Ort lesbar in ZHB-Flensburg
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <p>Results<br /><br /><br /></p>
+    <div id="results"></div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
