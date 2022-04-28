@@ -2,12 +2,16 @@ const langDict = {
     "German": {
         "##test1": "Deutsch",
         "##submit": "Senden",
-        "##abstract": "Beschreibung"
+        "##abstract": "Beschreibung",
+        "##tags": "Schlagwörter",
+        "##releaseYear": "Erscheinungsjahr",
     },
     "English": {
         "##test1": "English",
         "##submit": "Submit",
-        "##abstract": "Abstract"
+        "##abstract": "Abstract",
+        "##tags": "Tags",
+        "##releaseYear": "Release Year",
     }
 }
 const lang = langDict[paramLang] ?? langDict.English;

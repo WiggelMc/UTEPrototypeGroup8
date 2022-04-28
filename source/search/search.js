@@ -8,6 +8,9 @@ function getBookElement(match) {
     const title = shortenString(item.title, 60);
     const authors = shortenArray(item.authors,3).join("<br>");
     const abstract = shortenString(item.abstract?.join(", "), 140);
+    const tags = shortenString(item.tags?.join(", "), 100);
+    const displayReleaseYear = (item.releaseYear !== undefined);
+    const releaseYear = item.releaseYear;
 
     return `
     <div class="row my-2 mx-1 bg-success p-2 bg-opacity-50">
@@ -33,7 +36,8 @@ function getBookElement(match) {
         <p class="mt-5">
           <span class="local">##abstract</span>: ${abstract}
         </p>
-        <p class="mt-4">Schlagwörter: Krieg, China</p>
+        <p class="mt-4"><span class="local">##tags</span>: ${tags}</p>
+        <p class="mt-4 ${displayReleaseYear ? "" : "hide"}"><span class="local">##releaseYear</span>: ${releaseYear}</p>
       </div>
       <div class="col-4">
         <div class="text-end">
@@ -105,17 +109,6 @@ function filterMatch(match) {
 }
 
 function displayMatch(match) {
-    //let book = match.item; //TODO
-
-    //let text = document.createElement("p");
-
-    //let link = document.createElement("a");
-    //link.innerText = book.title+" "+book.availableEbook+book.availableRent+book.availableThere;
-    //link.href = pathBookview+book.id;
-
-    //text.appendChild(link);
-    //divResults.appendChild(text);
-
     const newElem = Object.assign(
         document.createElement(`div`),
         { id: `divid`,
@@ -161,7 +154,7 @@ function shortenString(str,maxLength) {
 shortenArray([1,2,3], 1)
 
 function shortenArray(arr, maxLength) {
-    if (arr === undefined || arr === null) return "-";
+    if (arr === undefined || arr === null) return ["-"];
     if (arr?.length <= maxLength) return arr;
     const newArr = arr.slice(0,maxLength-1);
     newArr.push("...");
