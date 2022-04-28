@@ -1,0 +1,16 @@
+.hide {
+    display: none;
+    visibility: hidden;
+}
+
+#preSearch {
+    position: absolute;
+    background-color: white;
+}
+
+#preSearch > p {
+    background-color: white;
+    border: 3px solid black;
+    margin: 0px;
+    padding: 5px;
+}

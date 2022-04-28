@@ -38,138 +38,9 @@ const DATABASE = {
     },
     books: [
         {
-            id: "0001-2A6571DA26602A67BE14EA8C5AB82349",
-
-            title: "Before the Normans : Southern Italy in the Ninth and Tenth Centuries / Barbara M. Kreutz", //https://eds.s.ebscohost.com/eds/detail/detail?sid=c2c267b8-e9fe-4da8-bbfa-888234642557%40redis&vid=5&bdata=Jmxhbmc9ZGUmc2l0ZT1lZHMtbGl2ZQ%253d%253d&lg=1&bdata=JnNpdGU9ZWRzLWxpdmU%3d#AN=zhb.1658624033&db=cat08832a
-            authors: [
-                "Kreutz, Barbara M.",
-            ],
-            tags: [
-                "eBook-DeGruyter-EBS-2021-2022",
-                "E-Book DeGruyter",
-            ],
-            abstract: [
-                "Summary: Kreutz writes the first modern study in English of the land, political structures, and cultures of southern Italy in the two centuries before the Norman conquest.",
-                "Summary: Biographical note: Barbara M. Kreutz was Dean Emeritus of the Graduate School of Arts and Sciences of Bryn Mawr College.",
-            ],
-            notes: [
-                "Anmerkung zum Exemplar : Ausdruck und Kopien sind ausschließlich für den eigenen wissenschaftlichen Gebrauch gestattet",
-                "1992",
-            ],
-
-            language: "English",
-            coverImage: "https://contentcafe2.btol.com/ContentCafe/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=M&Value=9780812205435",
-
-            publication: {
-                year: 2011,
-                location: "Philadelphia, Pa.",
-                publisher: "University of Pennsylvania Press",
-                type: "Book",
-            },
-            resources: [
-                {
-                    physical: false,
-
-                    available: true, // physical-only
-                    onLoanUntil: new Date("1970-01-01"), // physical-only
-
-                    url: "https://example.com/", // non-physical-only
-
-                    isbn: "9780812205435",
-                    accessionNr: "zhb.1658624033",
-                }
-            ],
-            database: "Katalog der ZHB Flensburg",
-        },
-        {
-            id: "0002-0467633C9723954300CEAFDF24776D8D",
-
-            title: "The Norman conquest in English history : Volume IA broken chain? / George Garnett", //https://eds.p.ebscohost.com/eds/detail/detail?vid=0&sid=5c1566fa-0c88-44f8-86a7-378a75827f83%40redis&bdata=Jmxhbmc9ZGUmc2l0ZT1lZHMtbGl2ZQ%3d%3d#AN=zhb.1747883662&db=cat08832a
-            authors: [
-                "Garnett, George",
-            ],
-            tags: [
-                "Oxford scholarship online",
-            ],
-            abstract: [
-                "Summary: This first volume of 'The Norman Conquest in English History' pursues a central theme in English historical thinking over seven centuries. Covering more than half a millennium, the volume explains how and why the experience of the Norman Conquest prompted both an unprecedented campaign in the early twelfth century to write (or create) the history of England, and to excavate (and fabricate) pre-Conquest English law. Garnett traces the treatment of the Conquest in English historiography, legal theory and practice, and political argument through the middle ages and early modern period, examining the dispersal of these materials from libraries afer the dissolution of the monasteries, and the attempts made to rescue, edit, and print many of them in the late sixteenth and early seventeenth centuries.",
-            ],
-            notes: [
-                "This edition previously issued in print: 2020. - Includes bibliographical references and index. - Description based on online resource; title from home page (viewed on December 15, 2020)",
-            ],
-
-            language: "English",
-
-            publication: {
-                year: 2021,
-                location: "Oxford",
-                publisher: "Oxford University Press",
-                type: "Book",
-            },
-            resources: [
-                {
-                    physical: false,
-
-                    url: "https://example.com/", // non-physical-only
-
-                    isbn: "9780191793042",
-                    accessionNr: "zhb.1747883662",
-                }
-            ],
-            database: "Katalog der ZHB Flensburg",
-        },
-        {
-            id: "0003-0E75294CF26DF5B3B46F5715A92878C1",
-
-            title: "Architect of Justice : Felix S. Cohen and the Founding of American Legal Pluralism / Dalia Tsuk Mitchell", //https://eds.p.ebscohost.com/eds/detail/detail?vid=2&sid=b1b9b816-318b-4237-abba-cd350edc6dc1%40redis&bdata=Jmxhbmc9ZGUmc2l0ZT1lZHMtbGl2ZQ%3d%3d#AN=zhb.1042458405&db=cat08832a
-            authors: [
-                "Mitchell, Dalia Tsuk",
-            ],
-            tags: [
-                "Indians of North America",
-                "Indians of North America -- Legal status, laws, etc",
-                "Law teachers",
-                "BIOGRAPHY & AUTOBIOGRAPHY / Lawyers & Judges",
-                "Legal polycentricity",
-                "Legal polycentricity -- United States",
-                "Law teachers -- United States -- Biography",
-                "eBook-DeGruyter-EBS-2021-2022",
-                "E-Book DeGruyter",
-            ],
-            abstract: [
-                "Summary: A major figure in American legal history during the first half of the twentieth century, Felix Solomon Cohen (1907–1953) is best known for his realist view of the law and his efforts to grant Native Americans more control over their own cultural, political, and economic affairs. A second-generation Jewish American, Cohen was born in Manhattan, where he attended the College of the City of New York before receiving a Ph.D. in philosophy from Harvard University and a law degree from Columbia University. Between 1933 and 1948 he served in the Solicitor's Office of the Department of the Interior, where he made lasting contributions to federal Indian law, drafting the Indian Reorganization Act of 1934, the Indian Claims Commission Act of 1946, and, as head of the Indian Law Survey, authoring The Handbook of Federal Indian Law (1941), which promoted the protection of tribal rights and continues to serve as the basis for developments in federal Indian law.In Architect of Justice, Dalia Tsuk Mitchell provides the first intellectual biography of Cohen, whose career and legal philosophy she depicts as being inextricably bound to debates about the place of political, social, and cultural groups within American democracy. Cohen was, she finds, deeply influenced by his own experiences as a Jewish American and discussions within the Jewish community about assimilation and cultural pluralism as well the persecution of European Jews before and during World War II.Dalia Tsuk Mitchell uses Cohen's scholarship and legal work to construct a history of legal pluralism—a tradition in American legal and political thought that has immense relevance to contemporary debates and that has never been examined before. She traces the many ways in which legal pluralism informed New Deal policymaking and demonstrates the importance of Cohen's work on behalf of Native Americans in this context, thus bringing federal Indian law from the margins of American legal history to its center. By following the development of legal pluralism in Cohen's writings, Architect of Justice demonstrates a largely unrecognized continuity in American legal thought between the Progressive Era and ongoing debates about multiculturalism and minority rights today. A landmark work in American legal history, this biography also makes clear the major contribution Felix S. Cohen made to America's legal and political landscape through his scholarship and his service to the American government.",
-            ],
-            notes: [
-                "Frontmatter -- -- CONTENTS -- -- Acknowledgments -- -- Prologue -- -- PART 1: Longing to Belong, 1907-1933 -- -- 1. A Second Generation -- -- 2. Multiple Destinies -- -- PART II: Building a Pluralist State, 1933-1939 -- -- 3. A Time Ripe for Change -- -- 4. Ideals and Compromises -- -- 5. In Flux -- -- PART III: New Frontiers, 1939-1941 -- -- 6. First Americans, Misfits, and Refugees -- -- 7. The Intellectual Equipment of a Generation -- -- PART IV: Re-Mapping the Terrain, 1941-1947 -- -- 8. Property in (Group) Conflict -- -- 9. A Contract with America -- -- PART V: Doubts and Hopes, 1948-1953 -- -- 10. In the Shadows of the Law -- -- Epilogue -- -- Abbreviations -- -- Notes -- -- Selected Bibliography -- -- Index",
-                "Anmerkung zum Exemplar : Ausdruck und Kopien sind ausschließlich für den eigenen wissenschaftlichen Gebrauch gestattet",
-                "2007",
-                "Mode of access: Internet via World Wide Web.",
-                "In English",
-            ],
-
-            language: "English",
-
-            publication: {
-                year: 2018,
-                location: "Ithaca, NY",
-                publisher: "Cornell University Press",
-                type: "Book",
-            },
-            resources: [
-                {
-                    physical: false,
-
-                    url: "https://example.com/", // non-physical-only
-
-                    isbn: "9781501717161",
-                    accessionNr: "zhb.1042458405",
-                }
-            ],
-            database: "Katalog der ZHB Flensburg",
-        },
-        {
-            id: "1-D41D8CD98F00B204E9800998ECF8427E",
+            id: "3D78CA30DBE24AB35F87E4B48E034BAC",
             title: "Before the Normans : Southern Italy in the Ninth and Tenth Centuries / Barbara M. Kreutz",
+            series: "The Middle Ages Series",
             lang: "English",
             authors: [
                 "Kreutz, Barbara M., VerfasserIn",
@@ -186,10 +57,80 @@ const DATABASE = {
                 "Anmerkung zum Exemplar : Ausdruck und Kopien sind ausschließlich für den eigenen wissenschaftlichen Gebrauch gestattet",
                 "1992",
             ],
-            isbn: "9780812205435",
+            publicationInfo: "Philadelphia, Pa. University of Pennsylvania Press, 2011",
+            releaseYear: "2011",
+            releaseType: "Book",
+            documentType: "Online",
+            medium: "Online-Ressource (268 S.)",
+            isbn: [
+                "9780812205435",
+            ],
+            accessionNr: "zhb.1658624033",
+            rating: 5,
+            availableEbook: 1,
+            availableRent: 1,
+            rentDelay: 20,
+            availableThere: 1,
+            cover: "https://contentcafe2.btol.com/ContentCafe/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=M&Value=9780812205435",
         },
         {
-            id: "2-D41D8CD98F00B204E9800998ECF8427E",
+            id: "6FA397B039F1FEC5DEFFF3B4146AE04C",
+            title: "Usability engineering / Jakob Nielsen",
+            lang: "English",
+            authors: [
+                "Nielsen, Jakob, 1957-, VerfasserIn",
+            ],
+            notes: [
+                "Archivierung/Langzeitarchivierung gewährleistet PEBW DE-31 pdager",
+                "ST 280:L1UBME",
+            ],
+            publicationInfo: "Amsterdam Heidelberg [u.a.] Kaufmann, 2008",
+            releaseYear: "2008",
+            releaseType: "Book",
+            documentType: "Book",
+            medium: "XIV, 362 S. graph. Darst.",
+            isbn: [
+                "9780125184069",
+                "0125184069",
+                "9780080520292",
+            ],
+            accessionNr: "zhb.617526206",
+            rating: 2,
+            availableEbook: 1,
+            availableRent: 2,
+            rentDelay: 12,
+            availableThere: 1,
+        },
+        {
+            id: "2DF6F8D7C6F59076957B51EC0C447DEA",
+            title: "Universal usability : designing computer interfaces for diverse user populations / ed. by Jonathan Lazar",
+            lang: "English",
+            tags: [
+                "User interfaces (Computer systems)",
+                "Aufsatzsammlung",
+            ],
+            notes: [
+                "Includes bibliographical references and index",
+                "Archivierung prüfen 20200919 DE-640 2 pdager",
+            ],
+            publicationInfo: "Hoboken, NJ Wiley, 2007",
+            releaseYear: "2007",
+            releaseType: "Book",
+            documentType: "Book",
+            medium: "XVI, 610 S. Ill., graph. Darst. 24 cm",
+            isbn: [
+                "9780470027271",
+                "0470027274",
+            ],
+            accessionNr: "zhb.524368228",
+            rating: 4,
+            availableEbook: 1,
+            availableRent: 1,
+            rentDelay: 29,
+            availableThere: 1,
+        },
+        {
+            id: "D5D801468873312C1E76A7E71F0F7F8",
             title: "An Anglo-Norman reader / Jane Bliss",
             lang: "English",
             tags: [
@@ -213,7 +154,188 @@ const DATABASE = {
                 "Available through Open Book Publishers",
                 "Texts in Anglo-Norman with English translation; introduction and editorial matter in English",
             ],
-            isbn: "9781783743148",
+            publicationInfo: "Cambridge Open Book Publishers, 2018",
+            releaseYear: "2018",
+            releaseType: "Book",
+            documentType: "Online",
+            medium: "1 Online-Ressource (1 volume)",
+            isbn: [
+                "9781783743148",
+                "9781783743131",
+                "1783743158",
+                "9781783743155",
+                "9781783743179",
+                "9781783743162",
+                "1783743174",
+                "1783743166",
+            ],
+            accessionNr: "zhb.1066604665",
+            rating: 2,
+            availableEbook: 1,
+            availableRent: 0,
+            rentDelay: 22,
+            availableThere: 1,
         },
+        {
+            id: "47598BA8A752FBABB32E7FE32CF2F13F",
+            title: "Handbook of usability testing : how to plan, design, and conduct effective tests / Jeff Rubin; Dana Chisnell",
+            lang: "English",
+            authors: [
+                "Rubin, Jeffrey, 1949-, VerfasserIn",
+            ],
+            tags: [
+                "User interfaces (Computer systems) -- Testing",
+                "Softwareengineering",
+            ],
+            notes: [
+                "Literaturangaben",
+            ],
+            publicationInfo: "Indianapolis, Ind. Wiley, 2008",
+            releaseYear: "2008",
+            releaseType: "Book",
+            documentType: "Book",
+            medium: "XXXVI, 348 S. Ill., graph. Darst.",
+            isbn: [
+                "9780470185483",
+                "04703860889780470386088",
+                "9780470386088",
+                "97804701854830470185481",
+            ],
+            accessionNr: "zhb.560716001",
+            rating: 5,
+            availableEbook: 0,
+            availableRent: 1,
+            rentDelay: 20,
+            availableThere: 0,
+        },
+        {
+            id: "6FBAC9E89E09A0655D904E490A2FCAD8",
+            title: "Healthcare Interoperability Standards Compliance Handbook : Conformance and Testing of Healthcare Data Exchange Standards",
+            series: "2016 Springer EBA Collection",
+            authors: [
+                "Frank Oemig",
+                "Robert Snelick",
+            ],
+            publicationInfo: "Cham : Springer. 2016",
+            accessionNr: "1302178",
+            rating: 1,
+            availableEbook: 0,
+            availableRent: 0,
+            rentDelay: 1,
+            availableThere: 0,
+        },
+        {
+            id: "24B3AB35087F84C4EC5A34FE4FC98673",
+            title: "Handbook of Narrative Analysis",
+            series: "Frontiers of Narrative",
+            authors: [
+                "Luc Herman",
+                "Bart Vervaeck",
+            ],
+            publicationInfo: "Ed.: Second edition. Lincoln : University of Nebraska Press. 2019",
+            accessionNr: "2275179",
+            rating: 3,
+            availableEbook: 1,
+            availableRent: 1,
+            rentDelay: 23,
+            availableThere: 1,
+        },
+        {
+            id: "63609137AC4C8D667066AEB25F1843B4",
+            title: "The Palgrave Handbook of the Southern Gothic",
+            series: "Palgrave Handbooks",
+            authors: [
+                "Susan Castillo Street",
+                "Charles L. Crow",
+            ],
+            publicationInfo: "[London] : Palgrave Macmillan. 2016",
+            accessionNr: "1333849",
+            rating: 3,
+            availableEbook: 0,
+            availableRent: 2,
+            rentDelay: 3,
+            availableThere: 0,
+        },
+        {
+            id: "FD2115A895FA22074A228CE743A935C1",
+            title: "Basiswissen Softwaretest : Aus- und Weiterbildung zum Certified Tester – Foundation Level nach ISTQB®-Standard",
+            series: "iSQI-Reihe",
+            lang: "German",
+            authors: [
+                "Andreas Spillner",
+                "Tilo Linz",
+            ],
+            publicationInfo: "Ed.: 6., überarbeitete und aktualisierte Auflage. Heidelberg : dpunkt.verlag. 2019",
+            accessionNr: "2151604",
+            rating: 3,
+            availableEbook: 0,
+            availableRent: 2,
+            rentDelay: 3,
+            availableThere: 0,
+        },
+        {
+            id: "C2F9D6E129E4E4DFE662EEDE748C9CFC",
+            title: "Fuel Cell Science and Engineering, 2 Volume Set : Materials, Processes, Systems and Technology",
+            authors: [
+                "Detlef Stolten",
+                "Bernd Emonts",
+            ],
+            publicationInfo: "Hoboken : Wiley-VCH. 2012",
+            accessionNr: "458186",
+            rating: 1,
+            availableEbook: 1,
+            availableRent: 1,
+            rentDelay: 26,
+            availableThere: 1,
+        },
+        {
+            id: "1C5AD45A95FE0CA75EC840EF6BCC8B3C",
+            title: "Cross cultural usability testing of MOOC platform",
+            lang: "English",
+            authors: [
+                "Selmanovic, Dzenan",
+                "Sayar, Ahmet",
+                "Durdu, Pinar O.",
+            ],
+            tags: [
+                "Communication, Networking and Broadcast Technologies",
+                "Computing and Processing",
+                "Engineered Materials, Dielectrics and Plasmas",
+                "Engineering Profession",
+                "Photonics and Electrooptics",
+                "Power, Energy and Industry Applications",
+                "Robotics and Control Systems",
+                "Signal Processing and Analysis",
+                "Computer aided instruction",
+                "Electronic learning",
+                "Atmospheric measurements",
+                "Particle measurements",
+                "Time measurement",
+                "Cultural differences",
+                "Web sites",
+                "MOOC platform usability",
+                "Udemy",
+                "usability of website",
+                "cross-cultural usability evaluation",
+                "WAMMI",
+            ],
+            notes: [
+                "Conference Location: Ankara, Turkey, Turkey",
+                "Conference Start Date: 21 Oct. 2021",
+                "Conference End Date: 23 Oct. 2021",
+            ],
+            documentType: "Conference",
+            isbn: [
+                "978-1-6654-4930-4",
+            ],
+            accessionNr: "edseee.9604673",
+            rating: 5,
+            availableEbook: 0,
+            availableRent: 1,
+            rentDelay: 20,
+            availableThere: 0,
+        },
+
+
     ]
 }
