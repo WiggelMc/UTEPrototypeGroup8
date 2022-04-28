@@ -1,11 +1,13 @@
 const langDict = {
     "German": {
         "##test1": "Deutsch",
-        "##submit": "Senden"
+        "##submit": "Senden",
+        "##abstract": "Beschreibung"
     },
     "English": {
         "##test1": "English",
-        "##submit": "Submit"
+        "##submit": "Submit",
+        "##abstract": "Abstract"
     }
 }
 const lang = langDict[paramLang] ?? langDict.English;

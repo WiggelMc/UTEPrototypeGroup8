@@ -1,5 +1,64 @@
 const pathBookview = "../bookview/bookview.html?book=";
 
+function getBookElement(match) {
+
+    //CODE HERE
+    const item = match.item;
+
+    const title = shortenString(item.title, 60);
+    const authors = shortenArray(item.authors,3).join("<br>");
+    const abstract = shortenString(item.abstract?.join(", "), 140);
+
+    return `
+    <div class="row my-2 mx-1 bg-success p-2 bg-opacity-50">
+      <div class="col-2">
+        <img src="../../The Art.jpeg" class="img-fluid" alt="..." />
+      </div>
+      <div class="col-2">
+        <p class="card-title text-center fw-bold my-2">
+          ${title}
+        </p>
+        <p class="text-center my-5">
+            ${authors}
+        </p>
+        <div class="text-center my-5">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+        </div>
+      </div>
+      <div class="col-4">
+        <p class="mt-5">
+          <span class="local">##abstract</span>: ${abstract}
+        </p>
+        <p class="mt-4">Schlagwörter: Krieg, China</p>
+      </div>
+      <div class="col-4">
+        <div class="text-end">
+          <span class="fa fa-star"></span>
+        </div>
+        <p class="mt-4">Verfügbarkeit:</p>
+        <div class="py-2">
+          <span
+            class="border-secondary bg-success rounded-pill px-2 text-white"
+            >Vor Ort lesen</span
+          >
+          <span
+            class="border-secondary bg-success rounded-pill px-2 text-white"
+            >Ausleihbar</span
+          >
+          <span
+            class="border-secondary bg-success rounded-pill px-2 text-white"
+            >E-Book</span
+          >
+        </div>
+      </div>
+    </div>
+    `
+}
+
 const divResults = document.getElementById("results");
 const divSearchbar = document.getElementById("search");
 const divPreSearch = document.getElementById("preSearch");
@@ -46,28 +105,25 @@ function filterMatch(match) {
 }
 
 function displayMatch(match) {
-    let book = match.item; //TODO
+    //let book = match.item; //TODO
 
-    let text = document.createElement("p");
+    //let text = document.createElement("p");
 
-    let link = document.createElement("a");
-    link.innerText = book.title+" "+book.availableEbook+book.availableRent+book.availableThere;
-    link.href = pathBookview+book.id;
+    //let link = document.createElement("a");
+    //link.innerText = book.title+" "+book.availableEbook+book.availableRent+book.availableThere;
+    //link.href = pathBookview+book.id;
 
-    text.appendChild(link);
-    divResults.appendChild(text);
+    //text.appendChild(link);
+    //divResults.appendChild(text);
 
-
-    /*
     const newElem = Object.assign(
-        document.createElement(`div`), { id: `divid`, className: `test`, innerHTML: `
-            <p>hello-%Test%-%Test1%</p>
-        `
-                .replaceAll("%Test%","Injected Term")
-                .replaceAll("%Test1%","Walfisch")
-        });
+        document.createElement(`div`),
+        { id: `divid`,
+            className: `test`,
+            innerHTML: getBookElement(match)
+        }
+    );
     divResults.appendChild(newElem);
-    */
 }
 
 function loadFilter(filterString) {
@@ -92,6 +148,22 @@ function preSearch(e) {
         if (!filterMatch(match)) continue;
         let text = document.createElement("p");
         text.innerText = match.item.title;
-        divPreSearch.appendChild(text)
+        divPreSearch.appendChild(text);
     }
+}
+
+function shortenString(str,maxLength) {
+    if (str === undefined || str === null) return "-";
+    if (str?.length <= maxLength) return str;
+    return str?.substr(0,maxLength-3)+"...";
+}
+
+shortenArray([1,2,3], 1)
+
+function shortenArray(arr, maxLength) {
+    if (arr === undefined || arr === null) return "-";
+    if (arr?.length <= maxLength) return arr;
+    const newArr = arr.slice(0,maxLength-1);
+    newArr.push("...");
+    return newArr;
 }
