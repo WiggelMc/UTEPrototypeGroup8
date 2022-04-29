@@ -1,17 +1,25 @@
 const langDict = {
     "German": {
-        "##test1": "Deutsch",
+        "##language": "Deutsch",
         "##submit": "Senden",
         "##abstract": "Beschreibung",
         "##tags": "Schlagwörter",
         "##releaseYear": "Erscheinungsjahr",
+        "##availability": "Verfügbarkeit",
+        "##availableThere": "Vor Ort lesen",
+        "##availableRent": "Ausleihbar",
+        "##availableEbook": "E-Book",
     },
     "English": {
-        "##test1": "English",
+        "##language": "English",
         "##submit": "Submit",
         "##abstract": "Abstract",
         "##tags": "Tags",
         "##releaseYear": "Release Year",
+        "##availability": "Availability",
+        "##availableThere": "Read at Library",
+        "##availableRent": "Borrowable",
+        "##availableEbook": "E-Book",
     }
 }
 const lang = langDict[paramLang] ?? langDict.English;

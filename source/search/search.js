@@ -12,6 +12,11 @@ function getBookElement(match) {
     const displayReleaseYear = (item.releaseYear !== undefined);
     const releaseYear = item.releaseYear;
 
+    const availableEbook = item.availableEbook;
+    const availableRent = item.availableRent;
+    const rentDelay = item.rentDelay;
+    const availableThere = item.availableThere;
+
     return `
     <div class="row my-2 mx-1 bg-success p-2 bg-opacity-50">
       <div class="col-2">
@@ -43,19 +48,19 @@ function getBookElement(match) {
         <div class="text-end">
           <span class="fa fa-star"></span>
         </div>
-        <p class="mt-4">Verfügbarkeit:</p>
+        <p class="mt-4"><span class="local">##availability</span>:</p>
         <div class="py-2">
           <span
-            class="border-secondary bg-success rounded-pill px-2 text-white"
-            >Vor Ort lesen</span
+            class="rounded-pill px-2 text-white local availability ${availableThere == 0 ? "avNo" : "avYes"}"
+            >##availableThere</span
           >
           <span
-            class="border-secondary bg-success rounded-pill px-2 text-white"
-            >Ausleihbar</span
+            class="rounded-pill px-2 text-white local availability ${availableRent == 0 ? "avNo" : availableRent == 1 ? "avYes" : "avYesnt"}"
+            >##availableRent</span
           >
           <span
-            class="border-secondary bg-success rounded-pill px-2 text-white"
-            >E-Book</span
+            class="rounded-pill px-2 text-white local availability ${availableEbook == 0 ? "avNo" : "avYes"}"
+            >##availableEbook</span
           >
         </div>
       </div>

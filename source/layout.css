@@ -14,3 +14,17 @@
     margin: 0px;
     padding: 5px;
 }
+
+.availability {
+    border: 2px solid black;
+}
+
+.availability.avYes {
+    background-color: #08a129;
+}
+.availability.avNo {
+    background-color: #651515;
+}
+.availability.avYesnt {
+    background-color: #ffab26;
+}
