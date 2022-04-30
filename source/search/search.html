@@ -73,11 +73,11 @@
       <div class="container">
         <div class="row bg-success p-2 bg-opacity-25">
           <div class="col-6">
-            <form action="search.html">
-              <input type="radio" id="searchDBHS" class="formDBHS hide" name="db" value="HS" required>
-              <input type="radio" id="searchDBEUF" class="formDBEUF hide" name="db" value="EUF" required>
-              <label for="searchDBHS">HS</label>
-              <label for="searchDBEUF">EUF</label>
+            <form action="search.html" id="searchForm">
+              <input type="radio" id="searchDBHS" class="formDBHS hide-radio" name="db" value="HS" required>
+              <input type="radio" id="searchDBEUF" class="formDBEUF hide-radio" name="db" value="EUF" required>
+              <label for="searchDBHS" class="dbLabel">HS</label>
+              <label for="searchDBEUF" class="dbLabel">EUF</label>
 <<<<<<< HEAD
               <input
                 type="radio"
@@ -129,7 +129,7 @@
           >
             <h2>Filter</h2>
             <p class="fw-bold mt-5">Verfügbarkeit</p>
-            <form class="text-start ms-2">
+            <div id="filterDialog" class="text-start ms-2">
               <input type="checkbox" />
               <label for="">E-Book</label><br />
               <input type="checkbox" />
@@ -142,9 +142,9 @@
                 <input type="text" class="w-75 mb-5" /><br />
               </div>
               <div class="ps-4 mt-3">
-                <input type="submit" value="Übernehmen" class="ms-5" />
+                <input type="button" value="Übernehmen" onclick="saveFilter()" class="ms-5" />
               </div>
-            </form>
+            </div>
           </div>
           <div class="col-lg-10 col-md-8 col-sm-7 bg-light" id="results"></div>
         </div>

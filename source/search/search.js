@@ -156,6 +156,8 @@ function loadFilter(filterString) {
 
 function saveFilter() {
   //TODO
+    //let filterString = "";
+
 }
 
 function preSearch(e) {
@@ -163,19 +165,26 @@ function preSearch(e) {
   const fuse2 = new Fuse(DATABASE.books, DATABASE.fuseOptions);
   const preResult = fuse2.search(e.target.value);
 
-  divPreSearch.innerHTML = "";
-  for (let match of preResult) {
-    if (!filterMatch(match)) continue;
-    let text = document.createElement("p");
-    text.innerText = match.item.title;
-    divPreSearch.appendChild(text);
-  }
+    divPreSearch.innerHTML = "";
+    for (let match of preResult) {
+        if (!filterMatch(match)) continue;
+        let text = document.createElement("input");
+        text.setAttribute("type", "button")
+        text.setAttribute("onclick",`preSearchClick('${match.item.title}')`)
+        text.setAttribute("value", match.item.title);
+        divPreSearch.appendChild(text);
+    }
 }
 
-function shortenString(str, maxLength) {
-  if (str === undefined || str === null) return "-";
-  if (str?.length <= maxLength) return str;
-  return str?.substr(0, maxLength - 3) + "...";
+function preSearchClick(term) {
+    divSearchbar.value = term;
+    divSearchForm.submit();
+}
+
+function shortenString(str,maxLength) {
+    if (str === undefined || str === null) return "-";
+    if (str?.length <= maxLength) return str;
+    return str?.substr(0,maxLength-3)+"...";
 }
 
 shortenArray([1, 2, 3], 1);

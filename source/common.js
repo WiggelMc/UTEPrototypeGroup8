@@ -36,7 +36,7 @@ function reloadLinks() {
     }
 
     setFormValues(formLang, paramLang ?? "");
-    setFormValues(formSearch, paramSearch ?? "");
+    //setFormValues(formSearch, paramSearch ?? "");
     setFormValues(formBook, paramBook ?? "");
     setFormValues(formUsername, paramUsername ?? "");
     setFormValues(formFilter, paramFilter ?? "");
