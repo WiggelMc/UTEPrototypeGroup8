@@ -3,8 +3,10 @@ Cover Images: Links in database.js
 Libraries:
     Fuse.js: https://fusejs.io/
     Bootstrap: https://getbootstrap.com/
+Unmaintainable Code by:
+    Kim Hollstein (functionality with JS)
+    Mustafa Waleed Jabbar, Al-Rahmawee (design with Bootstrap)
 Others:
     https://hs-flensburg.de/sites/default/files/styles/full_width/public/event/2022-02/TopWochen_Header_eng_22_Web.jpg?itok=iTEnD2h8
     https://kbimages1-a.akamaihd.net/fabf787b-ac84-48ef-bfaa-7a33f6b71656/1200/1200/False/the-art-of-war-186.jpg
     https://www.uni-flensburg.de/processed-image/4105839/deliver?image=4105839&contentHash=64cc91227781a93ff4f71b537c7c752f2f14d6a9&processingInstructions=%7B%22width%22%3A%221100c%22%2C%22height%22%3A252.70270270270274%2C%22crop%22%3A%7B%22x%22%3A0%2C%22y%22%3A153.28798185941042%2C%22width%22%3A1920%2C%22height%22%3A438.7868480725623%7D%7D&hash=b7d22e025ca26257973cb3994855a684b112e79c&eID=tx_intdiv_thumbnail
-
