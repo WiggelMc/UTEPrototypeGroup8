@@ -268,9 +268,11 @@ function submitSearch() {
 }
 
 function changeDB(db) {
-    paramDB=db;
-    reloadLinks();
-    divSearchForm.submit();
+    if (paramDB !== db) {
+        paramDB=db;
+        reloadLinks();
+        divSearchForm.submit();
+    }
 }
 
 function shortenString(str,maxLength) {
