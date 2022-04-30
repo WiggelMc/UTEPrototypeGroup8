@@ -112,20 +112,27 @@ const fuse = new Fuse(DATABASE.books, DATABASE.fuseOptions);
 
 const filter = {};
 
-let searchResult = fuse.search(paramSearch ?? "").filter(x => filterMatchDB(x));
+let searchResult = [];
+if (divResults !== null) {
+    searchResult = fuse.search(paramSearch ?? "").filter(x => filterMatchDB(x));
 
-if (searchResult.length < 3) {
-    const newOptions = JSON.parse(JSON.stringify(DATABASE.fuseOptions));
-    newOptions.threshold = 1.0;
-    // noinspection JSUnresolvedFunction
-    const newFuse = new Fuse(DATABASE.books, newOptions);
-    const tempResult = newFuse.search(paramSearch ?? "").filter(x => filterMatchDB(x));
-    searchResult = tempResult.slice(0,Math.min(5,tempResult.length));
+    if (searchResult.length < 3) {
+        const newOptions = JSON.parse(JSON.stringify(DATABASE.fuseOptions));
+        newOptions.threshold = 1.0;
+        // noinspection JSUnresolvedFunction
+        const newFuse = new Fuse(DATABASE.books, newOptions);
+        const tempResult = newFuse.search(paramSearch ?? "").filter(x => filterMatchDB(x));
+        searchResult = tempResult.slice(0,Math.min(5,tempResult.length));
+    }
 }
 
 loadFilter(paramFilter);
 displayOptions(paramSearch);
-displayResult(searchResult);
+
+if (divResults !== null) {
+    displayResult(searchResult);
+}
+
 reloadLinks();
 
 function displayOptions(searchTerm) {
@@ -271,8 +278,6 @@ function shortenString(str,maxLength) {
     if (str?.length <= maxLength) return str;
     return str?.substr(0,maxLength-3)+"...";
 }
-
-shortenArray([1, 2, 3], 1);
 
 function shortenArray(arr, maxLength) {
   if (arr === undefined || arr === null) return ["-"];
