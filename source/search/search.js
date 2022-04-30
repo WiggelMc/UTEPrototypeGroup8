@@ -209,6 +209,12 @@ function preSearchClick(term) {
     }
 }
 
+function changeDB(db) {
+    paramDB=db;
+    reloadLinks();
+    divSearchForm.submit();
+}
+
 function shortenString(str,maxLength) {
     if (str === undefined || str === null) return "-";
     if (str?.length <= maxLength) return str;
