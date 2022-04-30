@@ -97,21 +97,22 @@ const divResults = document.getElementById("results");
 const divSearchbar = document.getElementById("search");
 const divPreSearch = document.getElementById("preSearch");
 
-const divSearchForm =  document.getElementById("searchForm");
+const divSearchForm = document.getElementById("searchForm");
 
 // noinspection JSUnresolvedFunction
 const fuse = new Fuse(DATABASE.books, DATABASE.fuseOptions);
 
 const filter = {};
 
-let searchResult = fuse.search(paramSearch ?? "");
+let searchResult = fuse.search(paramSearch ?? "").filter(x => filterMatchDB(x));
 
 if (searchResult.length < 3) {
     const newOptions = JSON.parse(JSON.stringify(DATABASE.fuseOptions));
     newOptions.threshold = 1.0;
     // noinspection JSUnresolvedFunction
     const newFuse = new Fuse(DATABASE.books, newOptions);
-    searchResult = newFuse.search(paramSearch ?? "", {limit: 5});
+    const tempResult = newFuse.search(paramSearch ?? "").filter(x => filterMatchDB(x));
+    searchResult = tempResult.slice(0,Math.min(5,tempResult.length));
 }
 
 displayOptions(paramSearch);
@@ -147,6 +148,16 @@ function filterMatch(match) {
   return true;
 }
 
+function filterMatchDB(match) {
+    const item = match.item;
+    if (paramDB === "HS") {
+        return (item.database != 1);
+    } else if (paramDB === "EUF") {
+        return (item.database != -1);
+    }
+    return false;
+}
+
 function displayMatch(match) {
   const newElem = Object.assign(document.createElement(`div`), {
     id: `divid`,
@@ -173,11 +184,15 @@ function saveFilter() {
 function preSearch(e) {
   // noinspection JSUnresolvedFunction
   const fuse2 = new Fuse(DATABASE.books, DATABASE.fuseOptions);
-  const preResult = fuse2.search(e.target.value);
+  const preResult = fuse2.search(e.target.value).filter(x => filterMatchDB(x));
 
     divPreSearch.innerHTML = "";
+    let resultCount = 0;
     for (let match of preResult) {
         if (!filterMatch(match)) continue;
+        resultCount++;
+        if (resultCount > 8) break;
+
         let text = document.createElement("input");
         text.setAttribute("type", "button")
         text.setAttribute("onclick",`preSearchClick('${match.item.title}')`)
@@ -188,7 +203,10 @@ function preSearch(e) {
 
 function preSearchClick(term) {
     divSearchbar.value = term;
-    divSearchForm.submit();
+    divSearchForm.reportValidity();
+    if (divSearchForm.checkValidity()) {
+        divSearchForm.submit();
+    }
 }
 
 function shortenString(str,maxLength) {
