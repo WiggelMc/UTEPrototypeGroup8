@@ -80,8 +80,8 @@
             <form action="search.html" id="searchForm">
               <input type="radio" id="searchDBHS" class="formDBHS hide-radio" name="db" value="HS" required>
               <input type="radio" id="searchDBEUF" class="formDBEUF hide-radio" name="db" value="EUF" required>
-              <label for="searchDBHS" class="dbLabel">HS</label>
-              <label for="searchDBEUF" class="dbLabel">EUF</label>
+              <label for="searchDBHS" class="dbLabel" onclick="paramDB='HS';reloadLinks();divSearchForm.submit();">HS</label>
+              <label for="searchDBEUF" class="dbLabel" onclick="paramDB='EUF';reloadLinks();divSearchForm.submit();">EUF</label>
               <label for="search">Search:</label><br />
               <input
                 type="search"
