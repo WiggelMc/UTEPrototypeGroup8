@@ -5,6 +5,10 @@ function getBookElement(match) {
     //CODE HERE
     const item = match.item;
 
+    const bookId = item.id;
+
+    const bookCover = item.cover ?? "../../The Art.jpeg";
+
     const title = shortenString(item.title, 60);
     const authors = shortenArray(item.authors,3).join("<br>");
     const abstract = shortenString(item.abstract?.join(", "), 140);
@@ -17,10 +21,13 @@ function getBookElement(match) {
     const rentDelay = item.rentDelay;
     const availableThere = item.availableThere;
 
+    const rating = Number(item.rating);
+
     return `
+    <a class="keepLink" data-kl="../bookview/bookview.html?book=${bookId}" href="">
     <div class="row my-2 mx-1 bg-success p-2 bg-opacity-50">
       <div class="col-2">
-        <img src="../../The Art.jpeg" class="img-fluid" alt="..." />
+        <img src="${bookCover}" class="img-fluid" alt="..." />
       </div>
       <div class="col-2">
         <p class="card-title text-center fw-bold my-2">
@@ -30,11 +37,11 @@ function getBookElement(match) {
             ${authors}
         </p>
         <div class="text-center my-5">
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
+          <span class="fa fa-star ${rating >= 1 ? "checked" : ""}"></span>
+          <span class="fa fa-star ${rating >= 2 ? "checked" : ""}"></span>
+          <span class="fa fa-star ${rating >= 3 ? "checked" : ""}"></span>
+          <span class="fa fa-star ${rating >= 4 ? "checked" : ""}"></span>
+          <span class="fa fa-star ${rating >= 5 ? "checked" : ""}"></span>
         </div>
       </div>
       <div class="col-4">
@@ -65,6 +72,7 @@ function getBookElement(match) {
         </div>
       </div>
     </div>
+    </a>
     `
 }
 
@@ -82,6 +90,7 @@ const searchResult = fuse.search(paramSearch ?? "");
 displayOptions(paramSearch);
 loadFilter(paramFilter);
 displayResult(searchResult);
+reloadLinks();
 
 
 function displayOptions(searchTerm) {

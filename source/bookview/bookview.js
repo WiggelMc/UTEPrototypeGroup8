@@ -1,8 +1,3 @@
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-
-const paramBook = urlParams.get("book");
-
 const activeBook = getBook(paramBook);
 if (activeBook) displayBook(activeBook);
 
@@ -29,7 +24,7 @@ function displayBook(book) {
 function getBook(id) {
     for (const book of DATABASE.books)
         if (book.id === id) return book;
-
+    console.log(id)
     bookNotFound();
 }
 

@@ -28,3 +28,15 @@
 .availability.avYesnt {
     background-color: #ffab26;
 }
+
+a {
+    color: black;
+    font-style: normal;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    font-style: normal;
+    text-decoration: none;
+}

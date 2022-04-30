@@ -10,7 +10,7 @@ let paramFilter = urlParams.get("filter");
 
 const divSearchLang = document.getElementById("langSearch");
 
-divSearchLang.setAttribute("value",paramLang)
+divSearchLang?.setAttribute("value",paramLang)
 
 const keepLinkElements = document.getElementsByClassName("keepLink");
 
@@ -19,12 +19,15 @@ function reloadLinks() {
         const path = elem.dataset.kl;
         let newPath = path;
         if (!path.includes("?")) newPath += "?";
-        if (!path.includes("lang=") && paramLang != undefined) newPath += "lang="+paramLang+"&"
-        if (!path.includes("search=") && paramSearch != undefined) newPath += "search="+paramSearch+"&"
-        if (!path.includes("db=") && paramDB != undefined) newPath += "db="+paramDB+"&"
-        if (!path.includes("book=") && paramBook != undefined) newPath += "book="+paramBook+"&"
-        if (!path.includes("username=") && paramUsername != undefined) newPath += "username="+paramUsername+"&"
-        if (!path.includes("filter=") && paramFilter != undefined) newPath += "filter="+paramFilter+"&"
+
+        if (path.charAt(newPath.length-1) !== '?' && path.charAt(newPath.length-1) !== '&') newPath += "&";
+
+        if (!path.includes("lang=") && paramLang != undefined) newPath += "lang="+paramLang+"&";
+        if (!path.includes("search=") && paramSearch != undefined) newPath += "search="+paramSearch+"&";
+        if (!path.includes("db=") && paramDB != undefined) newPath += "db="+paramDB+"&";
+        if (!path.includes("book=") && paramBook != undefined) newPath += "book="+paramBook+"&";
+        if (!path.includes("username=") && paramUsername != undefined) newPath += "username="+paramUsername+"&";
+        if (!path.includes("filter=") && paramFilter != undefined) newPath += "filter="+paramFilter+"&";
         console.log(path)
         elem.setAttribute("href",newPath);
     }
