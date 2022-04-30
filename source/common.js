@@ -18,6 +18,8 @@ const formFilter = document.getElementsByClassName("formFilter");
 
 const keepLinkElements = document.getElementsByClassName("keepLink");
 
+const accountBar = document.getElementById("accountBar")
+
 function reloadLinks() {
     for (const elem of keepLinkElements) {
         const path = elem.dataset.kl;
@@ -58,6 +60,35 @@ function activateFormElements(elements) {
     for (const elem of elements) {
         elem.setAttribute("checked",true)
     }
+}
+
+function promptLogin() {
+    if (isLoggedIn()) {
+        let isLogOut = confirm("Log Out?");
+        if (isLogOut) {
+            paramUsername = "";
+            reloadLinks();
+            updateAccountBar();
+        }
+    } else {
+        let username = prompt("Enter Username", "") ?? null;
+        let password = prompt("Enter Password", "") ?? null;
+        if (username !== null && password !== null) {
+            paramUsername = username;
+            reloadLinks();
+            updateAccountBar();
+        }
+    }
+}
+
+function updateAccountBar() {
+    const nameString = isLoggedIn() ? paramUsername : "LOGIN";
+    accountBar.innerHTML = nameString;
+}
+updateAccountBar();
+
+function isLoggedIn() {
+    return ((paramUsername ?? "") !== "")
 }
 
 
