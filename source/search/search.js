@@ -97,12 +97,22 @@ const divResults = document.getElementById("results");
 const divSearchbar = document.getElementById("search");
 const divPreSearch = document.getElementById("preSearch");
 
+const divSearchForm =  document.getElementById("searchForm");
+
 // noinspection JSUnresolvedFunction
 const fuse = new Fuse(DATABASE.books, DATABASE.fuseOptions);
 
 const filter = {};
 
-const searchResult = fuse.search(paramSearch ?? "");
+let searchResult = fuse.search(paramSearch ?? "");
+
+if (searchResult.length < 3) {
+    const newOptions = JSON.parse(JSON.stringify(DATABASE.fuseOptions));
+    newOptions.threshold = 1.0;
+    // noinspection JSUnresolvedFunction
+    const newFuse = new Fuse(DATABASE.books, newOptions);
+    searchResult = newFuse.search(paramSearch ?? "", {limit: 5});
+}
 
 displayOptions(paramSearch);
 loadFilter(paramFilter);
