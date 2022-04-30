@@ -23,7 +23,7 @@
     background-color: #08a129;
 }
 .availability.avNo {
-    background-color: #651515;
+    background-color: #700015;
 }
 .availability.avYesnt {
     background-color: #ffab26;
@@ -39,4 +39,10 @@ a:hover {
     color: black;
     font-style: normal;
     text-decoration: none;
+}
+
+#searchDBHS:checked ~ label[for="searchDBHS"],
+#searchDBEUF:checked ~ label[for="searchDBEUF"]
+{
+    background-color: red;
 }

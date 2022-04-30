@@ -74,8 +74,11 @@
         <div class="row bg-success p-2 bg-opacity-25">
           <div class="col-6">
             <form action="search.html">
+              <input type="radio" id="searchDBHS" class="formDBHS hide" name="db" value="HS" required>
+              <input type="radio" id="searchDBEUF" class="formDBEUF hide" name="db" value="EUF" required>
               <label for="searchDBHS">HS</label>
               <label for="searchDBEUF">EUF</label>
+<<<<<<< HEAD
               <input
                 type="radio"
                 id="searchDBHS"
@@ -90,6 +93,8 @@
                 value="EUF"
                 required
               />
+=======
+>>>>>>> bf25754ca896286c24c5b649467204146dd8fab9
               <label for="search">Search:</label><br />
               <input
                 type="search"
@@ -99,13 +104,10 @@
                 oninput="preSearch(event)"
               /><br />
               <div id="preSearch"></div>
-              <input
-                type="text"
-                id="langSearch"
-                class="hide"
-                name="lang"
-                value="German"
-              /><br />
+              <input type="text" class="hide formLang" name="lang" value=""/>
+              <input type="text" class="hide formBook" name="book" value=""/>
+              <input type="text" class="hide formUsername" name="username" value=""/>
+              <input type="text" class="hide formFilter" name="filter" value=""/>
               <input
                 type="submit"
                 value="##submit"
