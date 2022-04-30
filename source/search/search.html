@@ -27,11 +27,25 @@
     </style>
   </head>
   <body>
-    <nav>
-      <a class="keepLink" data-kl="search.html?lang=German" href="">German</a>
-      <a class="keepLink" data-kl="search.html?lang=English" href="">English</a>
-      <p onclick="promptLogin()" id="accountBar">LOGIN</p>
-    </nav>
+    <div class="d-flex flex-row-reverse bd-highlight">
+        <div class="p-2 pt-3 bd-highlight">
+          <p onclick="promptLogin()" id="accountBar">LOGIN</p>
+        </div>
+        <div class="p-2 bd-highlight">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>
+              <a class="keepLink fa-flag-us" data-kl="search.html?lang=English" href="">
+                <img src="britain.png" alt="">English</a>
+            </option>
+            <option value="1">
+              <a class="keepLink" data-kl="search.html?lang=German" href="">
+                 Deutsch</a>
+            </option>
+            
+          </select>
+       </div>
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-success bg-opacity-50">
       <div class="container-fluid">
         <a class="navbar-brand" href="../../index.html">Home</a>
