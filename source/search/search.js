@@ -77,7 +77,7 @@ const fuse = new Fuse(DATABASE.books, DATABASE.fuseOptions);
 
 const filter = {}
 
-const searchResult = fuse.search(paramSearch);
+const searchResult = fuse.search(paramSearch ?? "");
 
 displayOptions(paramSearch);
 loadFilter(paramFilter);
@@ -85,7 +85,7 @@ displayResult(searchResult);
 
 
 function displayOptions(searchTerm) {
-    divSearchbar.setAttribute("value", searchTerm)
+    divSearchbar.setAttribute("value", searchTerm ?? "")
 }
 
 function displayResult(result) {

@@ -48,8 +48,9 @@
             </li>
             <li class="nav-item">
               <a
-                class="nav-link text-black"
-                href="../../Anschafungsvorschlag.html"
+                class="nav-link text-black keepLink"
+                data-kl="../../Anschafungsvorschlag.html"
+                href=""
                 >Anschaffungsvorschlag</a
               >
             </li>
@@ -73,6 +74,10 @@
         <div class="row bg-success p-2 bg-opacity-25">
           <div class="col-6">
             <form action="search.html">
+              <label for="searchDBHS">HS</label>
+              <label for="searchDBEUF">EUF</label>
+              <input type="radio" id="searchDBHS" name="db" value="HS" required>
+              <input type="radio" id="searchDBEUF" name="db" value="EUF" required>
               <label for="search">Search:</label><br />
               <input
                 type="search"
