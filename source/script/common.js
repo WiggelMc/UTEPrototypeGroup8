@@ -47,6 +47,11 @@ const langDict = {
         "##availableYesThere": "Verfügbar",
         "##apply": "Übernehmen",
         "##login": "Anmelden",
+        "##navSearch": "Suche",
+        "##navSuggest": "Anschaffungsvorschlag",
+        "##navEvents": "Events",
+        "##navMap": "Anfahrt",
+        "##navOrd": "Ordnungen",
     },
     "English": {
         "#date-locale": "en-US",
@@ -74,6 +79,11 @@ const langDict = {
         "##availableYesThere": "Available",
         "##apply": "Apply",
         "##login": "Log In",
+        "##navSearch": "Search",
+        "##navSuggest": "Suggest Books",
+        "##navEvents": "Events",
+        "##navMap": "Plan",
+        "##navOrd": "Regulations",
     }
 }
 const lang = langDict[paramLang] ?? langDict.English;
