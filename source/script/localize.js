@@ -3,6 +3,11 @@ const langDict = {
         "#date-locale": "de-DE",
         "##language": "Deutsch",
         "##submit": "Senden",
+        "##search": "Suchen",
+        "##searchTerm": "Suchbegriff",
+        "##dbHS": "HS-Bestand",
+        "##dbEUF": "EUF-Bestand",
+        "##filterReset": "Filter zurücksetzen",
         "##abstract": "Beschreibung",
         "##tags": "Schlagwörter",
         "##releaseYear": "Erscheinungsjahr",
@@ -20,6 +25,11 @@ const langDict = {
         "#date-locale": "en-US",
         "##language": "English",
         "##submit": "Submit",
+        "##search": "Search",
+        "##searchTerm": "Search Term",
+        "##dbHS": "HS Database",
+        "##dbEUF": "EUF Database",
+        "##filterReset": "Reset Filter",
         "##abstract": "Abstract",
         "##tags": "Tags",
         "##releaseYear": "Release Year",
@@ -48,7 +58,7 @@ function reloadLang() {
 
     for (const elem of localPropertyElements) {
         const str = elem.getAttribute(elem.dataset.local);
-        elem.setAttribute("value", lang[str]);
+        elem.setAttribute(elem.dataset.local, lang[str]);
     }
 }
 reloadLang()

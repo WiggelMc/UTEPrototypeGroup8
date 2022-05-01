@@ -42,18 +42,10 @@
         <div class="pe-2 pt-3 bd-highlight">
           <p onclick="promptLogin()" id="accountBar">LOGIN</p>
         </div>
-        <div class="p-2 bd-highlight">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>
-              <a class="keepLink " data-kl="search.html?lang=English" href="">
-                <img src="britain.png" alt="">English</a>
-            </option>
-            <option value="1">
-              <a class="keepLink" data-kl="search.html?lang=German" href="">
-                 Deutsch</a>
-            </option>
-          </select>
-       </div>
+      <div class="pe-2 pt-3 bd-highlight">
+        <a class="keepLink" data-kl="search.html?lang=English" href=""><img class="langButton" src="../img/britain.png" alt=""></a>
+        <a class="keepLink" data-kl="search.html?lang=German" href=""><img class="langButton" src="../img/germany.png" alt=""></a>
+      </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-success bg-opacity-50">
       <div class="container-fluid">
@@ -102,26 +94,25 @@
             <div class="row w-75 mt-5 mx-auto searchElement">
               <input type="radio" id="searchDBHS" class="formDBHS hide-radio" name="db" value="HS" required>
               <input type="radio" id="searchDBEUF" class="formDBEUF hide-radio" name="db" value="EUF" required>
-              <label for="searchDBHS" class="dbLabel col-6  text-black text-center" onclick="changeDB('HS')">HS</label>
-              <label for="searchDBEUF" class="dbLabel col-6 text-black text-center" onclick="changeDB('EUF')">EUF</label>
+              <label for="searchDBHS" class="dbLabel col-6  text-black text-center local" onclick="changeDB('HS')">##dbHS</label>
+              <label for="searchDBEUF" class="dbLabel col-6 text-black text-center local" onclick="changeDB('EUF')">##dbEUF</label>
             </div>
             <div class="row input-group mb-5 mx-auto bg-success text-white w-75">
               <input
                 type="text"
-                class="col-10 form-control py-2 searchElement"
+                class="col-10 form-control py-2 searchElement localP"
+                data-local="placeholder"
                 id="search"
                 name="search"
-                placeholder="Suchbegriff"
+                placeholder="##searchTerm"
                 aria-label=""
                 aria-describedby="button-addon2"
                 oninput="preSearch(event)"
               />
-              <button class="col-2 btn text-white searchElement searchButton" type="submit" id="button-addon2">
-                Suchen
-              </button>
+              <button class="col-2 btn text-white searchElement searchButton local" type="submit" id="button-addon2">##search</button>
               <div id="preSearch"></div>
             </div>
-            <p id="resetFilter" onclick="resetFilter()" class="hide">Reset Filter</p>
+            <p id="resetFilter" onclick="resetFilter()" class="hide local">##filterReset</p>
             <input type="text" class="hide formLang" name="lang" value=""/>
             <input type="text" class="hide formBook" name="book" value=""/>
             <input type="text" class="hide formUsername" name="username" value=""/>

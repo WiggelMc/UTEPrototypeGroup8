@@ -241,7 +241,7 @@ function preSearch(e) {
 
         let text = document.createElement("input");
         text.setAttribute("type", "button")
-        text.setAttribute("onclick",`preSearchClick('${match.item.title}')`)
+        text.setAttribute("onclick",`preSearchClick(\`${match.item.title}\`)`);
         text.setAttribute("value", match.item.title);
         divPreSearch.appendChild(text);
     }

@@ -90,3 +90,11 @@ a:hover {
     color: white!important;
     border: 6px solid black;
 }
+
+.langButton {
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+    image-rendering: pixelated;
+    border-radius: 100%;
+}
