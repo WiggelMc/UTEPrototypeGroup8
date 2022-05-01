@@ -132,3 +132,16 @@ body {
     border-radius: 80%;
     box-shadow: #005b1b;
 }
+
+.tagLink {
+    color: #050548;
+    text-decoration: underline;
+}
+
+.tagLink:hover {
+    color: #78789f;
+}
+
+.bookToRight {
+    margin-left: 20px;
+}

@@ -12,10 +12,35 @@ function getBookview(item) {
 
     const title = item.title;
     const authors = item.authors?.join("<br>") ?? "-";
-    const abstract = shortenString(item.abstract?.join(", "), 140);
-    const tags = shortenString(item.tags?.join(", "), 100);
-    const displayReleaseYear = item.releaseYear !== undefined;
-    const releaseYear = item.releaseYear;
+    const abstract = `<div class="bookToRight">
+    ${item.abstract?.join(", ") ?? "-"}
+    </div>`;
+    const tags = `<div class="bookToRight">
+    ${item.tags?.map(
+        tag => {
+            return `<a class="keepLink tagLink" data-kl="search.html?search=${tag}" href="">${tag}</a>`
+        }
+    ).join(", ") ?? "-"}
+    </div>`;
+    const releaseYear = `<div class="bookToRight">
+    ${item.releaseYear ?? "-"}
+    </div>`;
+
+    const series = `<div class="bookToRight">
+    ${item.series !== undefined ? `<a class="keepLink tagLink" data-kl="search.html?search=${item.series}" href="">${item.series}</a>` : "-"}
+    </div>`;
+
+    const publicationInfo = `<div class="bookToRight">
+    ${item.publicationInfo ?? "-"}
+    </div>`;
+
+    const isbn = `<div class="bookToRight">
+    ${item.isbn?.join(", ") ?? "-"}
+    </div>`;
+
+    const notes = `<div class="bookToRight">
+    ${item.notes?.join(", ") ?? "-"}
+    </div>`;
 
     const availableEbook = item.availableEbook;
     const availableRent = item.availableRent;
@@ -52,15 +77,30 @@ function getBookview(item) {
         </div>
         <div class="row mt-5 ps-5 py-3">
           <div class="col-10">
-            <p>Schlagwörter</p>
-            <p>Erscheinungsjahr</p>
-            <p>Beschreibung</p>
-            <p>Beschreibung</p>
-            <p>Beschreibung</p>
-            <p>Beschreibung</p>
-            <p>Beschreibung</p>
-            <p>Beschreibung</p>
-            <p>ISBN</p>
+            <p class="mt-4">
+                <span class="local resultCatTitle">##tags</span>:<br> ${tags}
+            </p>
+            <p class="mt-4">
+                <span class="local resultCatTitle">##releaseYear</span>:<br> ${releaseYear}
+            </p>
+            
+            <p class="mt-5">
+              <span class="local resultCatTitle">##abstract</span>:<br> ${abstract}
+            </p>
+            
+            <p class="mt-4">
+                <span class="local resultCatTitle">##notes</span>:<br> ${notes}
+            </p>
+            <p class="mt-4">
+                <span class="local resultCatTitle">##publicationInfo</span>:<br> ${publicationInfo}
+            </p>
+     
+            <p class="mt-4">
+                <span class="local resultCatTitle">##series</span>:<br> ${series}
+            </p>
+            <p class="mt-4">
+                <span class="local resultCatTitle">##isbn</span>:<br> ${isbn}
+            </p>
           </div>
           <div class="col-2">
             <img src="${bookCover}" class="img-fluid" alt="..." />

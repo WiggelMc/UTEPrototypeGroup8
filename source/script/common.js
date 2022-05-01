@@ -59,6 +59,10 @@ const langDict = {
         "##mustLogin": "Sie müssen angemeldet sein, um dies zu tun",
         "##avbRent": "Möchten Sie das Buch über die Fernleihe bestellen?",
         "##avbRentYesnt": "Möchten Sie das Buch vormerken?",
+        "##notes": "Notizen",
+        "##publicationInfo": "Veröffentlichung",
+        "##isbn": "ISBN",
+        "##series": "Reihe",
     },
     "English": {
         "#date-locale": "en-US",
@@ -96,6 +100,10 @@ const langDict = {
         "##mustLogin": "You must be logged in perform this action",
         "##avbRent": "Do you wish to order the Book to your Home?",
         "##avbRentYesnt": "Do you wish to reserve the Book?",
+        "##notes": "Notes",
+        "##publicationInfo": "Publication Info",
+        "##isbn": "ISBN",
+        "##series": "Series",
     }
 }
 const lang = langDict[paramLang] ?? langDict.German;
