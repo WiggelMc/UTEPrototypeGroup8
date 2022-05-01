@@ -86,7 +86,7 @@ const langDict = {
         "##navOrd": "Regulations",
     }
 }
-const lang = langDict[paramLang] ?? langDict.English;
+const lang = langDict[paramLang] ?? langDict.German;
 
 function reloadLinks() {
     for (const elem of keepLinkElements) {
