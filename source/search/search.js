@@ -99,29 +99,50 @@ const divPreSearch = document.getElementById("preSearch");
 
 const divSearchForm = document.getElementById("searchForm");
 
+const filterAvEbook = document.getElementById("filterAvEbook");
+const filterAvRent = document.getElementById("filterAvRent");
+const filterAvThere = document.getElementById("filterAvThere");
+const filterYearA = document.getElementById("filterYearA");
+const filterYearB = document.getElementById("filterYearB");
+
+const filterRESET = document.getElementById("resetFilter");
+
 // noinspection JSUnresolvedFunction
 const fuse = new Fuse(DATABASE.books, DATABASE.fuseOptions);
 
 const filter = {};
 
-let searchResult = fuse.search(paramSearch ?? "").filter(x => filterMatchDB(x));
+let searchResult = [];
+if (divResults !== null) {
+    searchResult = fuse.search(paramSearch ?? "").filter(x => filterMatchDB(x));
 
-if (searchResult.length < 3) {
-    const newOptions = JSON.parse(JSON.stringify(DATABASE.fuseOptions));
-    newOptions.threshold = 1.0;
-    // noinspection JSUnresolvedFunction
-    const newFuse = new Fuse(DATABASE.books, newOptions);
-    const tempResult = newFuse.search(paramSearch ?? "").filter(x => filterMatchDB(x));
-    searchResult = tempResult.slice(0,Math.min(5,tempResult.length));
+    if (searchResult.length < 3) {
+        const newOptions = JSON.parse(JSON.stringify(DATABASE.fuseOptions));
+        newOptions.threshold = 1.0;
+        // noinspection JSUnresolvedFunction
+        const newFuse = new Fuse(DATABASE.books, newOptions);
+        const tempResult = newFuse.search(paramSearch ?? "").filter(x => filterMatchDB(x));
+        searchResult = tempResult.slice(0,Math.min(5,tempResult.length));
+    }
 }
 
-displayOptions(paramSearch);
 loadFilter(paramFilter);
-displayResult(searchResult);
+displayOptions(paramSearch);
+
+if (divResults !== null) {
+    displayResult(searchResult);
+}
+
 reloadLinks();
 
 function displayOptions(searchTerm) {
   divSearchbar.setAttribute("value", searchTerm ?? "");
+
+  filterAvEbook.checked = filter.availableEbook > 1;
+  filterAvRent.checked = filter.availableRent > 1;
+  filterAvThere.checked = filter.availableThere > 1;
+  if (filter.yearA > 0) filterYearA.value = filter.yearA;
+  if (filter.yearB > 0) filterYearB.value = filter.yearB;
 }
 
 function displayResult(result) {
@@ -173,12 +194,45 @@ function loadFilter(filterString) {
   filter.availableEbook = filterString?.substr(8, 1);
   filter.availableRent = filterString?.substr(9, 1);
   filter.availableThere = filterString?.substr(10, 1);
+
+  if (filterString == 0) {
+      filterRESET.classList.add("hide");
+  } else {
+      filterRESET.classList.remove("hide");
+  }
+
 }
 
 function saveFilter() {
-  //TODO
-    //let filterString = "";
+    let yearA = Number(filterYearA.value);
+    if (isNaN(yearA) || yearA < 0 || yearA > 9999) yearA = 0;
+    let yearB = Number(filterYearB.value);
+    if (isNaN(yearB) || yearB < 0 || yearB > 9999) yearB = 0;
 
+    if (yearA > yearB && yearA != 0 && yearB != 0) {
+        let tmp = yearA;
+        yearA = yearB;
+        yearB = tmp;
+    }
+
+    let filterString = pad(yearA,4) + pad(yearB, 4) + (+filterAvEbook.checked) + (+filterAvRent.checked) + (+filterAvThere.checked)
+    paramFilter = filterString;
+    loadFilter(paramFilter);
+    reloadLinks();
+
+    submitSearch();
+}
+
+function resetFilter() {
+    paramFilter = "00000000000";
+    loadFilter(paramFilter);
+    reloadLinks();
+    submitSearch();
+}
+
+function pad(num, size) {
+    let s = "000000000" + num;
+    return s.substr(s.length-size);
 }
 
 function preSearch(e) {
@@ -203,6 +257,10 @@ function preSearch(e) {
 
 function preSearchClick(term) {
     divSearchbar.value = term;
+    submitSearch();
+}
+
+function submitSearch() {
     divSearchForm.reportValidity();
     if (divSearchForm.checkValidity()) {
         divSearchForm.submit();
@@ -210,9 +268,11 @@ function preSearchClick(term) {
 }
 
 function changeDB(db) {
-    paramDB=db;
-    reloadLinks();
-    divSearchForm.submit();
+    if (paramDB !== db) {
+        paramDB=db;
+        reloadLinks();
+        divSearchForm.submit();
+    }
 }
 
 function shortenString(str,maxLength) {
@@ -220,8 +280,6 @@ function shortenString(str,maxLength) {
     if (str?.length <= maxLength) return str;
     return str?.substr(0,maxLength-3)+"...";
 }
-
-shortenArray([1, 2, 3], 1);
 
 function shortenArray(arr, maxLength) {
   if (arr === undefined || arr === null) return ["-"];

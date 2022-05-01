@@ -112,6 +112,7 @@
               </button>
               <div id="preSearch"></div>
             </div>
+            <p id="resetFilter" onclick="resetFilter()" class="hide">Reset Filter</p>
             <input type="text" class="hide formLang" name="lang" value=""/>
             <input type="text" class="hide formBook" name="book" value=""/>
             <input type="text" class="hide formUsername" name="username" value=""/>
@@ -163,16 +164,16 @@
             <h2>Filter</h2>
             <p class="fw-bold mt-5">Verfügbarkeit</p>
             <div id="filterDialog" class="text-start ms-2">
-              <input type="checkbox" />
-              <label for="">E-Book</label><br />
-              <input type="checkbox" />
-              <label for="">Ausleihbar</label><br />
-              <input type="checkbox" />
-              <label for="">Vor Ort lesen</label>
+              <input type="checkbox" id="filterAvEbook" />
+              <label for="filterAvEbook">E-Book</label><br />
+              <input type="checkbox" id="filterAvRent"/>
+              <label for="filterAvRent">Ausleihbar</label><br />
+              <input type="checkbox" id="filterAvThere"/>
+              <label for="filterAvThere">Vor Ort lesen</label>
               <p class="text-center mt-4 fw-bold">Erscheinungsjahr</p>
               <div class="text-center">
-                <input type="text" class="w-75 mb-1" /><br />
-                <input type="text" class="w-75 mb-5" /><br />
+                <input type="text" class="w-75 mb-1" id="filterYearA" /><br />
+                <input type="text" class="w-75 mb-5" id="filterYearB" /><br />
               </div>
               <div class="ps-4 mt-3">
                 <input type="button" value="Übernehmen" onclick="saveFilter()" class="ms-5" />
