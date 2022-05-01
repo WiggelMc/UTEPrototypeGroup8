@@ -14,6 +14,23 @@
     />
   </head>
   <body>
+    <div class="d-flex flex-row-reverse bd-highlight">
+      <div class="pe-2 pt-3 bd-highlight">
+        <p onclick="promptLogin()" id="accountBar">LOGIN</p>
+      </div>
+      <div class="p-2 bd-highlight">
+        <select class="form-select" aria-label="Default select example">
+          <option selected>
+            <a class="keepLink " data-kl="search.html?lang=English" href="">
+              <img src="britain.png" alt="">English</a>
+          </option>
+          <option value="1">
+            <a class="keepLink" data-kl="search.html?lang=German" href="">
+               Deutsch</a>
+          </option>
+        </select>
+     </div>
+  </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-success bg-opacity-50">
       <div class="container-fluid">
         <a class="navbar-brand" href="../../index.html">Home</a>
@@ -73,30 +90,28 @@
       </div>
     </section>
     <section class="py-1">
-      <div class="container bg-secondary bg-opacity-25">
-        <a class="keepLink" data-kl="../search/search.html" href="">BACK</a>
+      <div class="container bg-secondary bg-opacity-25 pt-2">
+        <span class="bg-success py-1 px-3 text-center rounded">
+          <a class="keepLink text-white" data-kl="../search/search.html" href="">&larr; BACK</a>
+        </span>
         <h1 class="text-center fw-bold">The Art of the War</h1>
         <p class="text-center fw-bold">Autor: Sunt zu</p>
-        <div class="bg-info bg-opacity-50 py-3 px-5">
-          <p>Verfügbarkeit:</p>
-          <div class="ps-5">
-            <span class="bg-light mx-1 px-1 py-1">Ebook auf Eboks.com</span>
-            <span class="bg-light mx-1 px-1 py-1">Ebook auf buescher.com</span>
+        <p class="ps-5">Verfügbarkeit:</p>
+        <div class="row ps-5">
+          <div class="col-lg-3 col-md-4 col-sm-12">
+            <p class="bg-success py-1 px-3 text-center text-white rounded">Vor Ort lesen</p>
+            <p class="bg-white py-1 px-3 text-center roundedr">Geschichte Abteil 14</p>
           </div>
-          <br />
-          <div class="ps-5">
-            <span class="bg-light mx-1 px-1 py-1 w-50">
-              Ausleihbar in ZHB: 2 verfügbar, 1 ausgeliehen
-            </span>
+          <div class="col-lg-3 col-md-4 col-sm-12">
+            <p class="bg-success py-1 px-3 text-center text-white rounded">E-Book</p>
+            <p class="bg-white py-1 px-3 text-center rounded">E-Book auf Ebooks.com</p>
           </div>
-          <br />
-          <div class="ps-5">
-            <span class="bg-light mx-1 px-1 py-1 w-50">
-              Vor Ort in ZHB: Geschichte Abteil 14
-            </span>
+          <div class="col-lg-3 col-md-4 col-sm-12">
+            <p class="bg-danger py-1 px-3 text-center text-white rounded">Ausleihbar</p>
+            <p class="py-1 px-3 text-center rounded">nicht Ausleihbar</p>
           </div>
         </div>
-        <div class="row ps-5 py-3">
+        <div class="row mt-5 ps-5 py-3">
           <div class="col-10">
             <p>Schlagwörter</p>
             <p>Erscheinungsjahr</p>
