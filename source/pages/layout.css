@@ -1,3 +1,16 @@
+.navbar-nav a{
+   font-size: 25px
+}
+
+.nav-bar-active{
+   background: rgb(0, 120, 35, 0.6);
+   border-radius:20px;
+}
+.navbar-nav a:hover {
+   background: rgb(0, 120, 35, 0.6);
+   color: black;
+   border-radius:20px;
+}
 .hide {
     display: none;
     visibility: hidden;
