@@ -1,5 +1,6 @@
 const langDict = {
     "German": {
+        "#date-locale": "de-DE",
         "##language": "Deutsch",
         "##submit": "Senden",
         "##abstract": "Beschreibung",
@@ -9,8 +10,14 @@ const langDict = {
         "##availableThere": "Vor Ort lesen",
         "##availableRent": "Ausleihbar",
         "##availableEbook": "E-Book",
+        "##availableNo": "Nicht Verfügbar",
+        "##availableYesEbook": "E-Book lesen",
+        "##availableYesRent": "Zur Ausleihe",
+        "##availableYesntRent": "Ausgeliehen bis ",
+        "##availableYesThere": "Verfügbar",
     },
     "English": {
+        "#date-locale": "en-US",
         "##language": "English",
         "##submit": "Submit",
         "##abstract": "Abstract",
@@ -20,6 +27,11 @@ const langDict = {
         "##availableThere": "Read at Library",
         "##availableRent": "Borrowable",
         "##availableEbook": "E-Book",
+        "##availableNo": "Not Available",
+        "##availableYesEbook": "Read E-Book",
+        "##availableYesRent": "Get Book",
+        "##availableYesntRent": "Gone until ",
+        "##availableYesThere": "Available",
     }
 }
 const lang = langDict[paramLang] ?? langDict.English;
@@ -28,15 +40,18 @@ const lang = langDict[paramLang] ?? langDict.English;
 const localElements = document.getElementsByClassName("local");
 const localPropertyElements = document.getElementsByClassName("localP");
 
-for (const elem of localElements) {
-    const str = elem.innerHTML;
-    elem.innerHTML = lang[str];
-}
+function reloadLang() {
+    for (const elem of localElements) {
+        const str = elem.innerHTML;
+        elem.innerHTML = lang[str];
+    }
 
-for (const elem of localPropertyElements) {
-    const str = elem.getAttribute(elem.dataset.local);
-    elem.setAttribute("value", lang[str]);
+    for (const elem of localPropertyElements) {
+        const str = elem.getAttribute(elem.dataset.local);
+        elem.setAttribute("value", lang[str]);
+    }
 }
+reloadLang()
 
 /*
     Examples:

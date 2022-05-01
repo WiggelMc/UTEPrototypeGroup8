@@ -63,25 +63,15 @@ function getBookElement(match) {
             <p class="mt-4"><span class="local">##availability</span>:</p>
             <div class="py-2 row">
               <span
-                class="col-lg-4 my-1 text-center rounded-pill text-white local availability ${
-                  availableThere == 0 ? "avNo" : "avYes"
-                }"
+                class="col-lg-4 my-1 text-center rounded-pill text-white local availability ${availableThere == 0 ? "avNo" : "avYes"}"
                 >##availableThere</span
               >
               <span
-                class="col-lg-4 my-1  text-center rounded-pill text-white local availability ${
-                  availableRent == 0
-                    ? "avNo"
-                    : availableRent == 1
-                    ? "avYes"
-                    : "avYesnt"
-                }"
+                class="col-lg-4 my-1  text-center rounded-pill text-white local availability ${availableRent == 0 ? "avNo" : availableRent == 1 ? "avYes" : "avYesnt"}"
                 >##availableRent</span
               >
               <span
-                class="col-lg-4 my-1 text-center rounded-pill text-white local availability ${
-                  availableEbook == 0 ? "avNo" : "avYes"
-                }"
+                class="col-lg-4 my-1 text-center rounded-pill text-white local availability ${availableEbook == 0 ? "avNo" : "avYes"}"
                 >##availableEbook</span
               >
             </div>
