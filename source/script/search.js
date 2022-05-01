@@ -1,4 +1,4 @@
-const pathBookview = "../bookview/bookview.html?book=";
+const pathBookview = "../pages/bookview.html?book=";
 
 function getBookElement(match) {
   //CODE HERE
@@ -23,7 +23,7 @@ function getBookElement(match) {
   const rating = Number(item.rating);
 
   return `
-  <a class="keepLink" data-kl="../bookview/bookview.html?book=${bookId}" href="">
+  <a class="keepLink" data-kl="${pathBookview+bookId}" href="">
     <div class="row my-2 mx-1 bg-success p-2 bg-opacity-50">
       <div class="col-lg-2">
         <img src="${bookCover}" class="img-fluid" alt="..." />
@@ -179,6 +179,8 @@ function displayMatch(match) {
 }
 
 function loadFilter(filterString) {
+    if (filterString === null) filterString = "";
+
   filter.yearA = filterString?.substr(0, 4);
   filter.yearB = filterString?.substr(4, 4);
   filter.availableEbook = filterString?.substr(8, 1);

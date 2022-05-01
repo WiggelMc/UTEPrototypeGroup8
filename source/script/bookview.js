@@ -9,7 +9,7 @@ function getBookview(item) {
     const bookCover = item.cover ?? "../../The Art.jpeg";
 
     const title = item.title;
-    const authors = item.authors.join("<br>");
+    const authors = item.authors?.join("<br>") ?? "-";
     const abstract = shortenString(item.abstract?.join(", "), 140);
     const tags = shortenString(item.tags?.join(", "), 100);
     const displayReleaseYear = item.releaseYear !== undefined;
@@ -27,7 +27,7 @@ function getBookview(item) {
 
     return `<div class="container bg-secondary bg-opacity-25 pt-2">
         <span class="bg-success py-1 px-3 text-center rounded">
-          <a class="keepLink text-white" data-kl="../search/search.html" href="">&larr; BACK</a>
+          <a class="keepLink text-white" data-kl="../pages/search.html" href="">&larr; BACK</a>
         </span>
         <h1 class="text-center fw-bold">${title}</h1>
         <p class="text-center fw-bold">${authors}</p>
@@ -71,6 +71,7 @@ function displayBook(book) {
         document.createElement(`div`), { id: `divid`, className: `test`, innerHTML: getBookview(book)});
     bookProperties.appendChild(newElem);
     reloadLang();
+    reloadLinks();
 }
 
 function getBook(id) {
