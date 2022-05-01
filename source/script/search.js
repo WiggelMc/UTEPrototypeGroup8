@@ -221,6 +221,12 @@ function resetFilter() {
     submitSearch();
 }
 
+function resetFilterNoLoad() {
+    paramFilter = "00000000000";
+    loadFilter(paramFilter);
+    reloadLinks();
+}
+
 function pad(num, size) {
     let s = "000000000" + num;
     return s.substr(s.length-size);
@@ -263,6 +269,13 @@ function changeDB(db) {
         paramDB=db;
         reloadLinks();
         divSearchForm.submit();
+    }
+}
+
+function changeDBNoLoad(db) {
+    if (paramDB !== db) {
+        paramDB = db;
+        reloadLinks();
     }
 }
 

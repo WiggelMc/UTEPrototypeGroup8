@@ -228,8 +228,8 @@
           <div class="row w-75 mt-5 mx-auto searchElement">
             <input type="radio" id="searchDBHS" class="formDBHS hide-radio" name="db" value="HS" required>
             <input type="radio" id="searchDBEUF" class="formDBEUF hide-radio" name="db" value="EUF" required>
-            <label for="searchDBHS" class="dbLabel col-6  text-black text-center local" onclick="changeDB('HS')">##dbHS</label>
-            <label for="searchDBEUF" class="dbLabel col-6 text-black text-center local" onclick="changeDB('EUF')">##dbEUF</label>
+            <label for="searchDBHS" class="dbLabel col-6  text-black text-center local" onclick="changeDBNoLoad('HS')">##dbHS</label>
+            <label for="searchDBEUF" class="dbLabel col-6 text-black text-center local" onclick="changeDBNoLoad('EUF')">##dbEUF</label>
           </div>
           <div class="row input-group mb-5 mx-auto bg-success text-white w-75">
             <input
@@ -246,7 +246,7 @@
             <button class="col-2 btn text-white searchElement searchButton local" type="submit" id="button-addon2">##search</button>
             <div id="preSearch"></div>
           </div>
-          <p id="resetFilter" onclick="resetFilter()" class="hide local hoverArrow">##filterReset</p>
+          <p id="resetFilter" onclick="resetFilterNoLoad()" class="hide local hoverArrow">##filterReset</p>
           <input type="text" class="hide formLang" name="lang" value=""/>
           <input type="text" class="hide formBook" name="book" value=""/>
           <input type="text" class="hide formUsername" name="username" value=""/>
