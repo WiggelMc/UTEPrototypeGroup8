@@ -1,3 +1,5 @@
+const ebookLink = "https://www.loremipsum.de/";
+
 const bookProperties = document.getElementById("bookProperties");
 
 const activeBook = getBook(paramBook);
@@ -27,7 +29,7 @@ function getBookview(item) {
 
     return `<div class="container bg-secondary bg-opacity-25 pt-2">
         <span class="bg-success py-1 px-3 text-center rounded">
-          <a class="keepLink text-white" data-kl="../pages/search.html" href="">&larr; BACK</a>
+          <a class="keepLink text-white" data-kl="../pages/search.html" href="">&larr; <span class="local">##back</span></a>
         </span>
         <h1 class="text-center fw-bold">${title}</h1>
         <p class="text-center fw-bold">${authors}</p>
@@ -35,15 +37,17 @@ function getBookview(item) {
         <div class="row ps-5">
           <div class="col-lg-3 col-md-4 col-sm-12">
             <p class="availability ${availableThere == 0 ? "avNo" : "avYes"} py-1 px-3 text-center text-white rounded local">##availableThere</p>
-            <p class="${availableThere == 0 ? "" : "bg-white"} py-1 px-3 text-center rounded local">${availableThere == 0 ? "##availableNo" : "##availableYesThere"}</p>
+            <p class="${availableThere == 0 ? "" : "bg-white hoverArrow"} py-1 px-3 text-center rounded local" onclick="${availableThere == 0 ? "" : "avbThere()"}">${availableThere == 0 ? "##availableNo" : "##availableYesThere"}</p>
           </div>
           <div class="col-lg-3 col-md-4 col-sm-12">
             <p class="availability ${availableRent == 0 ? "avNo" : availableRent == 1 ? "avYes" : "avYesnt"} py-1 px-3 text-center text-white rounded local">##availableRent</p>
-            <p class="${availableRent == 0 ? "" : "bg-white"} py-1 px-3 text-center rounded"><span class="local">${availableRent == 0 ? "##availableNo" : availableRent == 1 ? "##availableYesRent" : "##availableYesntRent"}</span>${availableRent == 0 ? "" : availableRent == 1 ? "" : formattedDate}</p>
+            <p class="${availableRent == 0 ? "" : "bg-white hoverArrow"} py-1 px-3 text-center rounded" onclick="${availableRent == 0 ? "" : availableRent == 1 ? "avbRent()" : "avbRentYesnt()"}"><span class="local">${availableRent == 0 ? "##availableNo" : availableRent == 1 ? "##availableYesRent" : "##availableYesntRent"}</span>${availableRent == 0 ? "" : availableRent == 1 ? "" : formattedDate}</p>
           </div>
           <div class="col-lg-3 col-md-4 col-sm-12">
             <p class="availability ${availableEbook == 0 ? "avNo" : "avYes"} py-1 px-3 text-center text-white rounded local">##availableEbook</p>
-            <p class="${availableEbook == 0 ? "" : "bg-white"} py-1 px-3 text-center rounded local">${availableEbook == 0 ? "##availableNo" : "##availableYesEbook"}</p>
+            ${availableEbook == 0 ? "" : "<a href='"+ebookLink+"' target='_blank'>"}
+            <p class="${availableEbook == 0 ? "" : "bg-white hoverArrow"} py-1 px-3 text-center rounded local">${availableEbook == 0 ? "##availableNo" : "##availableYesEbook"}</p>
+            ${availableEbook == 0 ? "" : "</a>"}
           </div>
         </div>
         <div class="row mt-5 ps-5 py-3">
@@ -88,4 +92,24 @@ function bookNotFound() {
         `});
     document.body.appendChild(newElem);
     console.log("Book not Found");
+}
+
+function avbThere() {
+    alert(lang["##avbThere"]);
+}
+
+function avbRent() {
+    if (isLoggedIn()) {
+        confirm(lang["##avbRent"]);
+    } else {
+        alert(lang["##mustLogin"]);
+    }
+}
+
+function avbRentYesnt() {
+    if (isLoggedIn()) {
+        confirm(lang["##avbRentYesnt"]);
+    } else {
+        alert(lang["##mustLogin"]);
+    }
 }
