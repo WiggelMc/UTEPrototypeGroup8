@@ -138,9 +138,9 @@ reloadLinks();
 function displayOptions(searchTerm) {
   divSearchbar.setAttribute("value", searchTerm ?? "");
 
-  filterAvEbook.checked = filter.availableEbook > 1;
-  filterAvRent.checked = filter.availableRent > 1;
-  filterAvThere.checked = filter.availableThere > 1;
+  filterAvEbook.checked = filter.availableEbook > 0;
+  filterAvRent.checked = filter.availableRent > 0;
+  filterAvThere.checked = filter.availableThere > 0;
   if (filter.yearA > 0) filterYearA.value = filter.yearA;
   if (filter.yearB > 0) filterYearB.value = filter.yearB;
 }
