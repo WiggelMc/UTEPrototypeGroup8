@@ -13,14 +13,14 @@ function getBookview(item) {
     const title = item.title;
     const authors = item.authors?.join("<br>") ?? "-";
     const abstract = `<div class="bookToRight">
-    ${item.abstract?.join(", ") ?? "-"}
+    ${item.abstract?.join("<br><br>") ?? "-"}
     </div>`;
     const tags = `<div class="bookToRight">
     ${item.tags?.map(
         tag => {
             return `<a class="keepLink tagLink" data-kl="search.html?search=${tag}" href="">${tag}</a>`
         }
-    ).join(", ") ?? "-"}
+    ).join("<br>") ?? "-"}
     </div>`;
     const releaseYear = `<div class="bookToRight">
     ${item.releaseYear ?? "-"}
@@ -35,11 +35,11 @@ function getBookview(item) {
     </div>`;
 
     const isbn = `<div class="bookToRight">
-    ${item.isbn?.join(", ") ?? "-"}
+    ${item.isbn?.join("<br>") ?? "-"}
     </div>`;
 
     const notes = `<div class="bookToRight">
-    ${item.notes?.join(", ") ?? "-"}
+    ${item.notes?.join("<br><br>") ?? "-"}
     </div>`;
 
     const availableEbook = item.availableEbook;
