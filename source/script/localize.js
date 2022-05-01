@@ -1,7 +1,7 @@
 const localElements = document.getElementsByClassName("local");
 const localPropertyElements = document.getElementsByClassName("localP");
 
-function reloadLang() {
+reloadLang = () => {
     for (const elem of localElements) {
         const str = elem.innerHTML;
         if (lang[str] !== undefined) elem.innerHTML = lang[str];

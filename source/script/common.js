@@ -1,6 +1,8 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
+let reloadLang = () => {};
+
 let paramLang = urlParams.get("lang");
 let paramSearch = urlParams.get("search");
 let paramDB = urlParams.get("db");
@@ -137,6 +139,7 @@ function promptLogin() {
             paramUsername = "";
             reloadLinks();
             updateAccountBar();
+            reloadLang();
         }
     } else {
         let username = prompt(lang["#username"], "") ?? null;
