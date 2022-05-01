@@ -20,6 +20,64 @@ const keepLinkElements = document.getElementsByClassName("keepLink");
 
 const accountBar = document.getElementById("accountBar")
 
+const langDict = {
+    "German": {
+        "#date-locale": "de-DE",
+        "#username": "Benutzernamen eingeben",
+        "#password": "Passwort eingeben",
+        "#logout": "Abmelden?",
+        "##language": "Deutsch",
+        "##submit": "Senden",
+        "##search": "Suchen",
+        "##searchTerm": "Suchbegriff",
+        "##dbHS": "HS-Bestand",
+        "##dbEUF": "EUF-Bestand",
+        "##filterReset": "Filter zurücksetzen",
+        "##abstract": "Beschreibung",
+        "##tags": "Schlagwörter",
+        "##releaseYear": "Erscheinungsjahr",
+        "##availability": "Verfügbarkeit",
+        "##availableThere": "Vor Ort lesen",
+        "##availableRent": "Ausleihbar",
+        "##availableEbook": "E-Book",
+        "##availableNo": "Nicht Verfügbar",
+        "##availableYesEbook": "E-Book lesen",
+        "##availableYesRent": "Zur Ausleihe",
+        "##availableYesntRent": "Ausgeliehen bis ",
+        "##availableYesThere": "Verfügbar",
+        "##apply": "Übernehmen",
+        "##login": "Anmelden",
+    },
+    "English": {
+        "#date-locale": "en-US",
+        "#username": "Enter Username",
+        "#password": "Enter Password",
+        "#logout": "Log Out?",
+        "##language": "English",
+        "##submit": "Submit",
+        "##search": "Search",
+        "##searchTerm": "Search Term",
+        "##dbHS": "HS Database",
+        "##dbEUF": "EUF Database",
+        "##filterReset": "Reset Filter",
+        "##abstract": "Abstract",
+        "##tags": "Tags",
+        "##releaseYear": "Release Year",
+        "##availability": "Availability",
+        "##availableThere": "Read at Library",
+        "##availableRent": "Borrowable",
+        "##availableEbook": "E-Book",
+        "##availableNo": "Not Available",
+        "##availableYesEbook": "Read E-Book",
+        "##availableYesRent": "Get Book",
+        "##availableYesntRent": "Gone until ",
+        "##availableYesThere": "Available",
+        "##apply": "Apply",
+        "##login": "Log In",
+    }
+}
+const lang = langDict[paramLang] ?? langDict.English;
+
 function reloadLinks() {
     for (const elem of keepLinkElements) {
         const path = elem.dataset.kl;
@@ -64,15 +122,15 @@ function activateFormElements(elements) {
 
 function promptLogin() {
     if (isLoggedIn()) {
-        let isLogOut = confirm("Log Out?");
+        let isLogOut = confirm(lang["#logout"]);
         if (isLogOut) {
             paramUsername = "";
             reloadLinks();
             updateAccountBar();
         }
     } else {
-        let username = prompt("Enter Username", "") ?? null;
-        let password = prompt("Enter Password", "") ?? null;
+        let username = prompt(lang["#username"], "") ?? null;
+        let password = prompt(lang["#password"], "") ?? null;
         if (username !== null && password !== null) {
             paramUsername = username;
             reloadLinks();
@@ -82,7 +140,7 @@ function promptLogin() {
 }
 
 function updateAccountBar() {
-    const nameString = isLoggedIn() ? paramUsername : "LOGIN";
+    const nameString = isLoggedIn() ? paramUsername : "##login";
     accountBar.innerHTML = nameString;
 }
 updateAccountBar();

@@ -49,18 +49,15 @@ function getBookElement(match) {
           </div>
           <div class="col-lg-3">
             <p class="mt-5">
-              <span class="local">##abstract</span>: ${abstract}
+              <span class="local resultCatTitle">##abstract</span>: ${abstract}
             </p>
-            <p class="mt-4"><span class="local">##tags</span>: ${tags}</p>
+            <p class="mt-4"><span class="local resultCatTitle">##tags</span>: ${tags}</p>
             <p class="mt-4 ${
               displayReleaseYear ? "" : "hide"
-            }"><span class="local">##releaseYear</span>: ${releaseYear}</p>
+            }"><span class="local resultCatTitle">##releaseYear</span>: ${releaseYear}</p>
           </div>
           <div class="col-lg-6">
-            <div class="text-end">
-              <span class="fa fa-star"></span>
-            </div>
-            <p class="mt-4"><span class="local">##availability</span>:</p>
+            <p class="mt-4"><span class="local resultCatTitle">##availability</span>:</p>
             <div class="py-2 row">
               <span
                 class="col-lg-4 my-1 text-center rounded-pill text-white local availability ${availableThere == 0 ? "avNo" : "avYes"}"

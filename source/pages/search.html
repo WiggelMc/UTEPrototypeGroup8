@@ -35,7 +35,7 @@
   <body>
     <div class="d-flex flex-row-reverse bd-highlight">
         <div class="pe-2 pt-3 bd-highlight">
-          <p onclick="promptLogin()" id="accountBar">LOGIN</p>
+          <p onclick="promptLogin()" id="accountBar" class="hoverArrow local">##login</p>
         </div>
       <div class="pe-2 pt-3 bd-highlight">
         <a class="keepLink" data-kl="search.html?lang=English" href=""><img class="langButton" src="../img/britain.png" alt=""></a>
@@ -106,7 +106,7 @@
               <button class="col-2 btn text-white searchElement searchButton local" type="submit" id="button-addon2">##search</button>
               <div id="preSearch"></div>
             </div>
-            <p id="resetFilter" onclick="resetFilter()" class="hide local">##filterReset</p>
+            <p id="resetFilter" onclick="resetFilter()" class="hide local hoverArrow">##filterReset</p>
             <input type="text" class="hide formLang" name="lang" value=""/>
             <input type="text" class="hide formBook" name="book" value=""/>
             <input type="text" class="hide formUsername" name="username" value=""/>
@@ -156,21 +156,21 @@
             class="col-lg-2 col-md-4 col-sm-5 text-center bg-success p-2 bg-opacity-25"
           >
             <h2>Filter</h2>
-            <p class="fw-bold mt-5">Verfügbarkeit</p>
+            <p class="fw-bold mt-5 local">##availability</p>
             <div id="filterDialog" class="text-start ms-2">
               <input type="checkbox" id="filterAvEbook" />
-              <label for="filterAvEbook">E-Book</label><br />
+              <label for="filterAvEbook" class="local">##availableEbook</label><br />
               <input type="checkbox" id="filterAvRent"/>
-              <label for="filterAvRent">Ausleihbar</label><br />
+              <label for="filterAvRent" class="local">##availableRent</label><br />
               <input type="checkbox" id="filterAvThere"/>
-              <label for="filterAvThere">Vor Ort lesen</label>
-              <p class="text-center mt-4 fw-bold">Erscheinungsjahr</p>
+              <label for="filterAvThere" class="local">##availableThere</label>
+              <p class="text-center mt-4 fw-bold local">##releaseYear</p>
               <div class="text-center">
                 <input type="text" class="w-75 mb-1" id="filterYearA" /><br />
                 <input type="text" class="w-75 mb-5" id="filterYearB" /><br />
               </div>
               <div class="ps-4 mt-3">
-                <input type="button" value="Übernehmen" onclick="saveFilter()" class="ms-5" />
+                <input type="button" value="##apply" onclick="saveFilter()" class="ms-5 localP" data-local="value" />
               </div>
             </div>
           </div>
