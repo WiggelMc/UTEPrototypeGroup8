@@ -70,7 +70,6 @@ function displayBook(book) {
     const newElem = Object.assign(
         document.createElement(`div`), { id: `divid`, className: `test`, innerHTML: getBookview(book)});
     bookProperties.appendChild(newElem);
-    reloadLang();
     reloadLinks();
 }
 
